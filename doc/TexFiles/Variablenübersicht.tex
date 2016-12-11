@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                
+\geometry{letterpaper}      
+\usepackage[german]{babel}  
+\usepackage{color}           
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{natbib}
+\usepackage{amssymb, amsmath}
+\usepackage{hyphenat}
+
+
+%%%%%%%%%%%%Liste mit Variablen und Funktionen%%%%%%%%%%
+\begin{document}
+\begin{itemize}
+
+\item	\textbf{Skripte:} \textcolor{red}{Main, Game, HeadsUp} \\
+
+\item	\textbf{playerP1, playerP2, \textcolor{red}{M}:} Repräsentieren die zwei Spieler. Zeilenvektor mit 5 Werten. 
+\begin{enumerate}
+	\item riskFactorP-
+	\item playerP-(2) (Kapital)
+	\item playerP-(3) (cardValue)
+	\item playerP-(4) (Einsatz)
+	\item losses noch nicht gesetzt
+\end{enumerate}		
+	
+\item	\textbf{riskFactorP1, riskFactorP2, \textcolor{red}{M}:}  Setzverhalten der Spieler. Zahl zwischen 0 und. Umso h"oher der Wert, desto passiver der Spieler. Ist konstant\\
+
+\item	\textbf{playerP1(2), playerP2(2), \textcolor{red}{G, H}:} Momentanes Kapital der Spieler. Wird anfangs mit \emph{startCapitalP-} f"ur jeden Spieler individuell gesetzt\\
+
+\item	\textbf{playerP1(3), playerP2(3), \textcolor{red}{H, A}:} Der momentane Kartenwert des Spielers. Ist \emph{riskFactorP-} gr"osser als dieser Wert, setzt der Spieler\\
+
+\item	\textbf{playerP1(4), playerP2(4), \textcolor{red}{H}:} Momentaner Einsatz eines Spielers w"ahrend einer Runde. Wird durch \emph{betValue} inkrementiert.\\
+	%%%%% losses
+\item	\textbf{n, \textcolor{red}{M}:} Setzen wieviel Spiele gespielt werden\\
+
+\item	\textbf{betValue, \textcolor{red}{M,H}:} Um wieviel der Pot erh"oht werden kann\\
+
+\item	\textbf{blindOn, \textcolor{red}{M}:} Blinds ein-/ausschalten\\
+
+\item	\textbf{blindValue, \textcolor{red}{M}:} Um wieviel der Blind maximal erh"oht werden kann\\
+
+\item	\textbf{gameValues, \textcolor{red}{M}:} Zeilenvektor, der die Spieleinstellungen \emph{betValue, blindOn, blindValue} speichert\\
+
+\item	\textbf{winsP1, winsP2, \textcolor{red}{M}:} Anzahl Siege der Spieler, wird durch \emph{winner} inkrementiert\\
+
+\item	\textbf{rounds, \textcolor{red}{M}:} Vektor mit Anzahl gespielte H"ande pro Spiel\\
+
+\item	\textbf{totalRounds, \textcolor{red}{M}:} Gesamte Anzahl gespielte H"ande f"ur alle \emph{n} Spiele\\	
+
+\item	\textbf{counter, \textcolor{red}{M, G}:} Anzahl Runden bis ein Spieler gewinnt, hilft zum setzen von \emph{rounds} \\
+
+\item	\textbf{winner, \textcolor{red}{M, G}:} Gewinner eines Spiels, inkremiert \emph{winsP1} \\
+
+\item	\textbf{pot, \textcolor{red}{H}:} Pot w"ahrend einer Runde. Setzt sich aus den \emph{betValues} zusammen. Wird an \emph{playerP-(2)} verteilt, wenn dieser gewinnt \\
+
+\item	\textbf{betRounds, \textcolor{red}{H}:} Anzahl gespielte Runden pro Hand \\
+
+\item	\textbf{adjustCardValueP-, \textcolor{red}{H}:} Funktion, welche den momentanen Kartenwert (\emph{playerP-(3)} eines Spielers berechnet\\
+
+
+
+\end{itemize}
+\end{document}  
