@@ -105,9 +105,34 @@
 
 
 \section{Abstract}
+%abstract:
+% numbers to detailed
+%problem
+%what was done before
+%why old has failed
+%what is left open
+% how we address it = intro
+%sentnce for each main result
+%close it 
+
+
+% no matlab writing
+% explore amount of risktaking
+% numbers replace with intermediate
+% numbers not clear what they mean
+%elaborated strategy not 
+%finish with general outcome of this study
+
+
+%how to deal with errors, talk about them
+
+%section talking about robustness, why parameters are logical
+%sigma validation aside
+
 In the recent years Texas Hold'em has been increasingly popular amongst all the age groups. Therefore our aim in this study is to research how different strategies perform against each other in a heads up. In a next step we invastigated the change in outcome if one player undergoes a learning process. \\
-Hence we wrote a program using MATLAB that simulates a game of Texas Hold'em in which all feasible strategies compete against each other. In our model the strategy is represented by a single variable called risk factor that holds the wilingness of taking risks. The scale of the variable reaches from zero -extremely active- to one -extremely passive-. For the latter part one player can adjust his risk variable based on different learning algorithms, which then are compared with each other.\\
-The results show that up to a risk factor around 0.4 and 0.55 the more passive player prevails. Then there is a short transition period in which both players are evenly matched. After that we can see a reversed outcome where the more active clearly dominates. Concering the learnings algorithms we observed a significant increase in the average number of games won. This indicates that with an elaborated strategy also in real Texas Hold'em an important increase in the average games won can be achieved. 
+Hence we wrote a program using MATLAB that simulates a game of Texas Hold'em in which all feasible strategies compete against each other. In our model the strategy is represented by a single variable called risk factor that holds the willingness of taking risks. The scale of the variable reaches from zero -extremely active- to one -extremely passive-. For the latter part one player can adjust his risk variable based on different learning algorithms, which then are compared with each other.\\
+The results show that up to a risk factor around 0.4 and 0.55 the more passive player prevails. Then there is a short transition period in which both players are evenly matched. After that we can see a reversed outcome where the more active clearly dominates. Concering the learnings algorithms we observed a significant increase in the average number of games won. This indicates that with an elaborated strategy also in real Texas Hold'em an important increase in the average games won can be achieved.
+
 
 \section{Individual contributions}
 
@@ -172,8 +197,29 @@ The optimal riskfactor from player 1 can then be determined with the "50 Games" 
 
 
 \subsubsection{Bacon model}
-\subsubsection{Timodel}
-\subsubsection{Patrice model}
+This learning algoritm analyzes the loss of the last hand, because if the last hand has been won there is no need to adapt the strategy. So after every hand one of the following scenarios take place\\
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{ p{6.45cm}   p{5.1cm}  p{2.4cm}}
+%\hline
+Validation & Interpretation & Action\\
+%\end{tabular}
+\addlinespace
+%\begin{tabular}{ p{6.2cm}  | p{5.1cm} | p{2.7cm}}
+%\hline
+CapitalP-($t+1$) $>=$ Capital($t$) &	The player had equal or better cards, or the hand has not been played&
+r will not be changed \\
+%\hline
+\addlinespace
+CapitalP-$(t+1) ==$ Calpital$(t)-4$	&	The player has lost after the showdown and is thus to agressive & \ r=r+0.012\\
+%\hline
+\addlinespace
+Else (CapitalP- dropped by 1,2 or 3) &	The player is to passive, since it did not come to a showdown & \ R2=R2+0.003\\
+%\hline
+
+
+\end{tabular}
+
+\subsubsection{Count and gauge model}
 
 The main goal behind analysing the opponent’s way of playing is to correctly estimate his risk factor, in order to adapt one’s risk factor afterward. 
 Our algorithm accomplishes this in 2 consecutive steps:
@@ -220,7 +266,7 @@ Overview and organisation of files
 %%%%%
 In the poker-simulation multiple games with different strategies are played. Each game consists again of multiple parts called hands and each hand consists of up to four rounds.
 
-\subsubsection{Organisation of files}
+\subsection{Organisation of files}
 %%%%%
 \begin{minipage}{0.48\textwidth}
 \includegraphics[width=\textwidth]{Graphics/diagram_senkrecht.pdf}
@@ -233,25 +279,7 @@ After multiple tests an additional script \textit{ultramain.m} has been written 
 
 
 %%%%
-\begin{figure}[htbp]
-	% Auff??llen des Zwischenraums
-	\hfill
-	% minipage mit Grafik
-	\begin{minipage}{0.48\textwidth}
-	% \textwidth bezieht sich nun auf die Minipage
-	\includegraphics[width=\textwidth]{Graphics/diagram_senkrecht.pdf}
-	\caption{Eine Grafik}
-	\label{Bild} 
-	\end{minipage}
-% \caption{noch eine Caption}
-	% minipage mit (Blind-)Text
-	\begin{minipage}{0.48\textwidth} 
-	For better overview the script consists of a main file that repeatedly calls a function \textit{game.m}, which simulates a complete game. The function \textit{game.m} calls a function \textit{headsup.m} that simulates one hand, until one player has run out of money (game complete). The function \textit{game.m} is called by the function{main.m}, where all relevant variabes, relevant for the simulation are defined.
-After multiple tests an additional script \textit{ultramain.m} has been written to feed {main.m} with different risk-values.\\
-	% \caption{Der Text}
-	% \label{Text}
-	\end{minipage}
-\end{figure}
+
 
 %%%
 %%%%%
@@ -266,7 +294,7 @@ After multiple tests an additional script \textit{ultramain.m} has been written 
 
 
 
-\subsection{adjustCardValue.m}
+\subsubsection{adjustCardValue.m}
 At the heart of this simulation lies the adjustCardValue function, which recalculates the card value of a player. Important criteria are that the cards correlate with each other, so if a player has good cards it is likely that his hand is still good when a new phase is played, but also should it be possible to for a value to reach the whole spectrum of card quality from 0 to 1. This is important because for an example in real Texas Holdem if one has a bad starting hand but with some luck to have the best hand possible after the flop. Hence every value should be possible but not with the same probability.\\
 The way we implemented this mechanism is that the function receives the old card value and a number between 0 and 1 we call sigma. Then the function calculates the new value based on the normal distribution where the old card value sets the middle of the curve and the sigma determines how fast probability fades down to zero. A very high sigma means that the recalculated value has the chance to be on the whole spectrum and a very low sigma computes a new card value close to the old one.
 We chose the sigma for the flop as 0.4 because there three new cards are dealt and a big variety of outcomes is needed. In the next two rounds where only one card is dealt the current card value has to be stable so the chosen sigma there is 0.2.\\
@@ -293,7 +321,7 @@ Table two shows the highest and lowest possible resulting value of certain incom
 \end{tabular}
 \end{table}
 
-\subsection{headsup.m}
+\subsubsection{headsup.m}
 The core function, on which the simulation is built around. Is called headsup.m. It simulates one poker hand and consists of up to four rounds, where players can bet money on their win. At the end of a hand a showdown determines the winner, who can increase his capital by up to four betValues, while the losers capital decreases by the same amount.\\
 %sketchy \renewcommand{\arraystretch}{1.4}
 
@@ -321,99 +349,48 @@ BetValue\\
 
 At the beginning of headsup each player gets a random (Card-)value Val between 0 and 1, this value replaces his two handcards in this simplified simulation. In a next step the player with a blind is forced to place this blind in the pot. The other player can decide if he wants to place an equal amount in the pot.  Of course, the placement of money in the pot reduces the capital of a player. After both players decided to play (preflop), their card-values Val are altered in the next step, that should resemble the Flop of a normal poker game. Afterwards the players get another chance to place a bet, which is followed by the river, where once more both (Card-)values are slightly altered. This is followed by a last chance to place another bet before the showdown. In which the player with the better Card-Value wins the money in the pot.
 
-\subsection{game.m}
+\subsubsection{game.m}
 The function game.m is used to call the function headsup. Like in real poker game.m continues to call headsup, until one player has run out of money. To do so a while loop has been used. Game.m has the following input variables:
 RiskfactorP1,-P2
 CapitalP1,-P2
 BetValue
 The output of the function game is the winning player.
-\subsection{main.m}
+\subsubsection{main.m}
 In the function main.m all important variables are defined and passed on the function game.
 Additionally to that the variables needed to in the function main the number of games played is defined.
 Ultra-main: Is an additional script used to efficiently vary risk-factor one and two and to display the results in the form of a matrix.
 %%%%--------------List of Variables----------------%%%%
-\subsection{List of all variables and their purpose}
-\begin{itemize}
-
-\item	\textbf{Skripte:} \textcolor{red}{Main, Game, HeadsUp} \\
-
-\item	\textbf{playerP1, playerP2, \textcolor{red}{M}:} 
-Represent the two players $|$ vector of five elements
-\begin{enumerate}
-	\item riskFactorP-
-	\item playerP-(2) (Capital)
-	\item playerP-(3) (cardValue)
-	\item playerP-(4) (sum of bets placed by one player during one hand)
-\end{enumerate}		
-	
-\item	\textbf{riskFactorP1, riskFactorP2, \textcolor{red}{M}:}  A fixed parameter between 0 and 1 that represents the willingness to play risky (strategy). A low risk-factor means the player is very venturesome and plays nearly every hand, while a high risk-factor stands for a passive player, that only plays a hand if the cards, and thus the chances of him winning, are high.\\
-
-
-\item	\textbf{playerP1(2), playerP2(2), \textcolor{red}{G, H}:} Current Capital of the players. This value is set individually by \emph{startCapitalP-} at the beginning (of a game) and varies over the course of a game.\\
-
-\item	\textbf{playerP1(3), playerP2(3), \textcolor{red}{H, A}:} Current card score of the player (combination of private and public cards). If  \emph{riskFactorP- $<$ playerP-(3)}, the player raises respectively calls\\
-
-\item	\textbf{playerP1(4), playerP2(4), \textcolor{red}{H}:} 
-Sum of a players bets during a hand, incremented by\emph{betValue}\\
-	%%%%% losses
-\item	\textbf{n, \textcolor{red}{M}:} Numbre of games to be played during the simulation\\
-
-\item	\textbf{betValue, \textcolor{red}{M,H}:}Amount of chips a player can bet each round of the game\\
-
-%%bruuchts ned, oder?
-%\item	\textbf{blindOn, \textcolor{red}{M}:} Blinds ein-/ausschalten\\
-
-\item	\textbf{blindValue, \textcolor{red}{M}:} Number of chips that has to be placed in the pot to play\\
-
-%ebefalls unn??tig
-%\item	\textbf{gameValues, \textcolor{red}{M}:} Zeilenvektor, der die Spieleinstellungen \emph{betValue, blindOn, blindValue} speichert\\
-
-\item	\textbf{winsP1, winsP2, \textcolor{red}{M}:} Number of games won by a player, incremented by \emph{winner}\\
-%sollte neu definiert werden
-\item	\textbf{rounds, \textcolor{red}{Hallo HIER}:} Vektor mit Anzahl gespielte H"ande pro Spiel\\
-
-\item	\textbf{totalRounds, \textcolor{red}{HIER}:} Gesamte Anzahl gespielte H"ande f"ur alle \emph{n} Spiele\\	
-
-\item	\textbf{counter, \textcolor{red}{M, G HIER}:} Anzahl Runden bis ein Spieler gewinnt, hilft zum setzen von \emph{rounds} \\
-
-\item	\textbf{winner, \textcolor{red}{M, G}:} Winner of a game, increments \emph{winsP1} \\
-
-\item	\textbf{pot, \textcolor{red}{H}:} Amount of all bets placed during a hand. %Wird an \emph{playerP-(2)} verteilt, wenn dieser gewinnt
-\\
-
-\item	\textbf{betRounds, \textcolor{red}{HIER}:} Anzahl gespielte Runden pro Hand \\
-
-\item	\textbf{adjustCardValueP-, \textcolor{red}{H}:}
-function, that recalculates the current card-score \emph{playerP-(3)} of a player out of his private and the public cards after every action card.\\
-
-
-
-\end{itemize}
 
 
 %%%%--------------/List of Variables----------------%%%%
+
+
+
+
+
+\section{Simulation Results and Discussion}
+\subsection{Results of generic model}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.2]{Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg}
+\caption{Games won by player1 out of 1000\label{Topview of all Data}}
+\end{center}
+\end{figure}
+
+\subsubsection{Results with blinds}
+The figure \ref{Topview of all Data} shows how many games player1 has won out of a total of 1000, when both players started out with an equal amount of chips (50) and a fixed blind equal to the betValue of 1. The colour of every cell ($x=r1|y=r2$) shows the number of games won by Player1 with his risk factor $r1$ against player2 with a risk factor $r2$.\\
+%so etzte 
+On the diagonal ($r1=r2$) a green line can be seen, which shows that player1 and player2 have each won half of all games played. Around this line the games won by a player are antisymmetrically distributed, which means that both players did equally well when using the same risk factor (strategy) $r$.
+A too agressive startegy ($r < 0.4$) did not perform well. When a player had a too passive strategy ($r > 0.64$) he was not able to win many games eigther, unless the opponent played very passive as well. In the case of two nearly identical strategies the slightly more passive player hs had an advantage.
+If both riskfactors are between 0.45 and 0.55 the games were very balanced and not even an optimal conter-strategy did win more than 60\% of all games. An optimal risk factor against most other strategies was found to be around $r=0.5$. \\
+\subsubsection{Results with blinds | Interpretation}
+
+We translate these findings into real Texas Hold’em as follows: In General a player has to be just a little more passive than his opponent, to ensure that when he plays his hand it will be better than the one of the opponent.
+Inside the Interval $[0.45 < r1,r2 < 0.55]$ where both players adopt a balanced strategy, the same applies but with less certainty of a fixed outcome. In our eyes this represents the influence of luck during Texas Hold’em. The loss of a too aggressive player is easily explained by the fact that such a player will lose a lot more often than he wins because he also playes weak hands. A too agressive player looses mianly due to the blinds because his card score often drops below his risk factor, before the showdown.
+
+\subsection{Results of learning algorithms}
 \subsubsection{Bacon model}
-This learning algoritm analyzes the loss of the last hand, because if the last hand has been won there is no need to adapt the strategy. So after every hand one of the following scenarios take place\\
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{ p{6.45cm}   p{5.1cm}  p{2.4cm}}
-%\hline
-Validation & Interpretation & Action\\
-%\end{tabular}
-\addlinespace
-%\begin{tabular}{ p{6.2cm}  | p{5.1cm} | p{2.7cm}}
-%\hline
-CapitalP-($t+1$) $>=$ Capital($t$) &	The player had equal or better cards, or the hand has not been played&
-r will not be changed \\
-%\hline
-\addlinespace
-CapitalP-$(t+1) ==$ Calpital$(t)-4$	&	The player has lost after the showdown and is thus to agressive & \ r=r+0.012\\
-%\hline
-\addlinespace
-Else (CapitalP- dropped by 1,2 or 3) &	The player is to passive, since it did not come to a showdown & \ R2=R2+0.003\\
-%\hline
-
-
-\end{tabular}
 
 \begin{figure}[h!]
 \centering
@@ -434,28 +411,17 @@ The model has a great potential for different kinds of optimization:
  & The algorithm is based on a simplified scenario, where the only reason for a loss is besed on the strategy and never on luck. This leads in some cases to a change of policy even when this is not desired. This can be observed in the high standart deviation, even after haveing fond a well estimated r. This behavior leeds to the algorithm loosing against extreemly strong strategies due to its contious slight deviations from the optimum  riskvalue.\\ 
 \end{tabular}
 
+\subsubsection{Count and Gauge model}
+
+\subsubsection{Threshold model}
 
 
-\section{Simulation Results and Discussion}
-\begin{figure}
-\begin{center}
+
+\subsection{Robustnes of the Results}
+When performing 1000 games 1000 times, we found a standard deviation 7.7 of the wins, Which means the resulting wins after 1000 games are precise on $\pm 7.7$.
+\subsection{Robustnes of the variables}
 
 
-\includegraphics[scale=0.2]{Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg}
-\caption{Games won by player1 out of 1000\label{Topview of all Data}}
-\end{center}
-\end{figure}
-
-\subsubsection{Results with blinds}
-The figure \ref{Topview of all Data} shows how many games player1 has won out of a total of 1000, when both players started out with an equal amount of chips (50) and a fixed blind equal to the betValue of 1. The colour of every cell ($x=r1|y=r2$) shows the number of games won by Player1 with his risk factor $r1$ against player2 with a risk factor $r2$.\\
-%so etzte 
-On the diagonal ($r1=r2$) a green line can be seen, which shows that player1 and player2 have each won half of all games played. Around this line the games won by a player are antisymmetrically distributed, which means that both players did equally well when using the same risk factor (strategy) $r$.
-A too agressive startegy ($r < 0.4$) did not perform well. When a player had a too passive strategy ($r > 0.64$) he was not able to win many games eigther, unless the opponent played very passive as well. In the case of two nearly identical strategies the slightly more passive player hs had an advantage.
-If both riskfactors are between 0.45 and 0.55 the games were very balanced and not even an optimal conter-strategy did win more than 60\% of all games. An optimal risk factor against most other strategies was found to be around $r=0.5$. \\
-\subsubsection{Results with blinds | Interpretation}
-
-We translate these findings into real Texas Hold’em as follows: In General a player has to be just a little more passive than his opponent, to ensure that when he plays his hand it will be better than the one of the opponent.
-Inside the Interval $[0.45 < r1,r2 < 0.55]$ where both players adopt a balanced strategy, the same applies but with less certainty of a fixed outcome. In our eyes this represents the influence of luck during Texas Hold’em. The loss of a too aggressive player is easily explained by the fact that such a player will lose a lot more often than he wins because he also playes weak hands. A too agressive player looses mianly due to the blinds because his card score often drops below his risk factor, before the showdown.
 
 
 \section{Summary and Outlook}
