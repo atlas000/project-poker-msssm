@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.6.9)  11 DEC 2016 17:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.6.9)  12 DEC 2016 17:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -355,10 +355,10 @@ LaTeX Font Info:    ... okay on input line 26.
 \everyMPtoPDFconversion=\toks23
 ) (./cover.tex
 Package epstopdf Info: Source file: <ETHlogo.eps>
-(epstopdf)                    date: 2016-11-01 15:49:21
+(epstopdf)                    date: 2016-12-11 18:39:03
 (epstopdf)                    size: 179075 bytes
 (epstopdf)             Output file: <ETHlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-12-07 22:25:18
+(epstopdf)                    date: 2016-12-11 18:39:03
 (epstopdf)                    size: 14362 bytes
 (epstopdf)             Command: <repstopdf --outfile=ETHlogo-eps-converted-to.p
 df ETHlogo.eps>
@@ -380,7 +380,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (63.01508pt too wide) in paragraph at lines 34--43
+Overfull \hbox (4.33305pt too wide) in paragraph at lines 34--43
  [][] 
  []
 
@@ -411,30 +411,130 @@ Overfull \hbox (76.82234pt too wide) in paragraph at lines 76--81
 \tf@toc=\write3
 \openout3 = `reportTemplate.toc'.
 
- [3] [4] [5]
+ [3]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 155.
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no Ñ in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+ [4] [5]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+ [6]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 158.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 158.
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-[6]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
+[7]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ú in font cmr12!
@@ -469,163 +569,163 @@ Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ∑ in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ∑ in font cmr12!
- [7] <Graphics/diagram_senkrecht.pdf, id=34, 270.00874pt x 584.1825pt>
+ [8] <Graphics/diagram_senkrecht.pdf, id=37, 270.00874pt x 584.1825pt>
 File: Graphics/diagram_senkrecht.pdf Graphic file (type pdf)
 
 <use Graphics/diagram_senkrecht.pdf>
-Package pdftex.def Info: Graphics/diagram_senkrecht.pdf used on input line 223.
+Package pdftex.def Info: Graphics/diagram_senkrecht.pdf used on input line 226.
 
 (pdftex.def)             Requested size: 206.40038pt x 446.56833pt.
 
-Underfull \hbox (badness 2035) in paragraph at lines 226--228
+Underfull \hbox (badness 2035) in paragraph at lines 229--231
 \OT1/cmr/m/n/12 func-tion \OT1/cmr/m/it/12 game.m\OT1/cmr/m/n/12 , which sim-u-
 lates a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--228
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 \OT1/cmr/m/n/12 Af-ter mul-ti-ple tests an ad-di-tional
  []
 
 
-Underfull \hbox (badness 1769) in paragraph at lines 226--228
+Underfull \hbox (badness 1769) in paragraph at lines 229--231
 \OT1/cmr/m/n/12 script \OT1/cmr/m/it/12 ul-tra-main.m \OT1/cmr/m/n/12 has been 
 writ-ten
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--228
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 File: Graphics/diagram_senkrecht.pdf Graphic file (type pdf)
 <use Graphics/diagram_senkrecht.pdf>
-Package pdftex.def Info: Graphics/diagram_senkrecht.pdf used on input line 239.
+Package pdftex.def Info: Graphics/diagram_senkrecht.pdf used on input line 242.
 
 (pdftex.def)             Requested size: 206.40038pt x 446.56833pt.
 
-Underfull \hbox (badness 2529) in paragraph at lines 246--250
+Underfull \hbox (badness 2529) in paragraph at lines 249--253
 \OT1/cmr/m/n/10.95 The func-tion \OT1/cmr/m/it/10.95 game.m \OT1/cmr/m/n/10.95 
 calls a func-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--250
+Underfull \hbox (badness 10000) in paragraph at lines 249--253
 
  []
 
-[8] [9 <./Graphics/diagram_senkrecht.pdf>] [10]
+[9 <./Graphics/diagram_senkrecht.pdf>] [10]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 273.
+               Default added (so using `tbp') on input line 276.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--296
+Underfull \hbox (badness 10000) in paragraph at lines 297--299
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 349--350
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--352
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--356
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--357
+Underfull \hbox (badness 10000) in paragraph at lines 356--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--359
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--370
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--373
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
+Underfull \hbox (badness 10000) in paragraph at lines 379--380
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--380
+Underfull \hbox (badness 10000) in paragraph at lines 381--383
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
+Underfull \hbox (badness 10000) in paragraph at lines 384--385
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--385
+Underfull \hbox (badness 10000) in paragraph at lines 386--388
 
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 406--406
+Underfull \hbox (badness 1199) in paragraph at lines 409--409
 \OT1/cmr/m/n/12 show-down and is thus to
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 409--409
+Underfull \hbox (badness 1803) in paragraph at lines 412--412
 []\OT1/cmr/m/n/12 The player is to pas-sive,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--411
+Underfull \hbox (badness 10000) in paragraph at lines 412--414
 []
  []
 
 
-Overfull \hbox (5.79892pt too wide) in paragraph at lines 409--411
+Overfull \hbox (5.79892pt too wide) in paragraph at lines 412--414
 \OT1/cmr/m/n/12 R2=R2+0.003| 
  []
 
 
-Overfull \hbox (2.91122pt too wide) in paragraph at lines 393--414
+Overfull \hbox (2.91122pt too wide) in paragraph at lines 396--417
 [] 
  []
 
@@ -633,10 +733,10 @@ Overfull \hbox (2.91122pt too wide) in paragraph at lines 393--414
 File: Graphics/Janfigure.pdf Graphic file (type pdf)
 
 <use Graphics/Janfigure.pdf>
-Package pdftex.def Info: Graphics/Janfigure.pdf used on input line 417.
+Package pdftex.def Info: Graphics/Janfigure.pdf used on input line 420.
 (pdftex.def)             Requested size: 376.7705pt x 248.1289pt.
  [14]
-Overfull \hbox (3.71486pt too wide) in paragraph at lines 421--433
+Overfull \hbox (3.71486pt too wide) in paragraph at lines 424--436
 [] 
  []
 
@@ -648,15 +748,15 @@ type jpg)
 
 <use Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg>
 Package pdftex.def Info: Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat
-.jpg used on input line 441.
+.jpg used on input line 444.
 (pdftex.def)             Requested size: 486.20789pt x 254.94798pt.
 
-Overfull \hbox (56.20326pt too wide) in paragraph at lines 441--442
+Overfull \hbox (56.20326pt too wide) in paragraph at lines 444--445
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 447--452
+Underfull \hbox (badness 10000) in paragraph at lines 450--455
 
  []
 
@@ -668,122 +768,122 @@ Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
 [16] [17 <./Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg>]
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 493--494
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
+Underfull \hbox (badness 10000) in paragraph at lines 500--501
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 501--502
+Underfull \hbox (badness 10000) in paragraph at lines 504--505
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 503--504
+Underfull \hbox (badness 10000) in paragraph at lines 506--507
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 505--506
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 507--508
+Underfull \hbox (badness 10000) in paragraph at lines 510--511
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 509--510
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--512
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 513--514
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 515--516
+Underfull \hbox (badness 10000) in paragraph at lines 518--519
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
+Underfull \hbox (badness 10000) in paragraph at lines 520--521
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 519--520
+Underfull \hbox (badness 10000) in paragraph at lines 522--523
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 526--527
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--529
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 530--531
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--533
+Underfull \hbox (badness 10000) in paragraph at lines 535--536
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--535
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 536--537
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--541
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--543
+Underfull \hbox (badness 10000) in paragraph at lines 545--546
 
  []
 
@@ -795,7 +895,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3515 strings out of 493014
  47932 string characters out of 6133352
- 121217 words of memory out of 5000000
+ 123218 words of memory out of 5000000
  6980 multiletter control sequences out of 15000+600000
  14359 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -810,7 +910,7 @@ local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
 cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
 al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/loca
 l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on reportTemplate.pdf (21 pages, 2662803 bytes).
+Output written on reportTemplate.pdf (21 pages, 2663269 bytes).
 PDF statistics:
  144 PDF objects out of 1000 (max. 8388607)
  99 compressed objects within 1 object stream

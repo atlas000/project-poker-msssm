@@ -105,49 +105,52 @@
 
 
 \section{Abstract}
+In the recent years Texas Hold'em has been increasingly popular amongst all the age groups. Therefore our aim in this study is to research how different strategies perform against each other in a heads up. In a next step we invastigated the change in outcome if one player undergoes a learning process. \\
+Hence we wrote a program using MATLAB that simulates a game of Texas Hold'em in which all feasible strategies compete against each other. In our model the strategy is represented by a single variable called risk factor that holds the wilingness of taking risks. The scale of the variable reaches from zero -extremely active- to one -extremely passive-. For the latter part one player can adjust his risk variable based on different learning algorithms, which then are compared with each other.\\
+The results show that up to a risk factor around 0.4 and 0.55 the more passive player prevails. Then there is a short transition period in which both players are evenly matched. After that we can see a reversed outcome where the more active clearly dominates. Concering the learnings algorithms we observed a significant increase in the average number of games won. This indicates that with an elaborated strategy also in real Texas Hold'em an important increase in the average games won can be achieved. 
 
 \section{Individual contributions}
 
+The commonly used models for Texas Hold'em are mostly based on stochastical probability, which makes the implementation of algorithms highly complicated. Thus we decided to write our own simulation in order to simplify the problem using as few variables as possible. All further results and conclusions are based on our program.
+
+
 \section{Introduction and Motivations}
 
-Texas Hold'em is a variation of the card game Poker and is throughout casinos, tournaments, and private people amongst the most popular of its kind. The goal of the game consists in winning all the Money, or from here on called chips (virtual currency), from the other players on the table. As soon as one has no more Chips, he lost and has to leave the table.
-Every round consists of different stages of card dealing and then successive betting, where every player can decide if, and how much chips he/her wants to play according to some rules and by evaluating their private card, called hand, and the cards open on the table, named sequentially flop, turn and river.
-The total amount of chips from all the players in one round is called pot. Every round ends with either one player getting the whole pot or sometimes with a split of the pot, if two or more players have an equivalent score in the end of the round. The score is the highest possible combination of the private and public cards available according to o fixed scheme.
+Texas Hold’em is a variation of the card game Poker and is throughout casinos, tournaments and private people amongst the most popular of its kind. The goal of the game consists in winning all the money, or from here on called “chips” (virtual currency), from the other players at the table. As soon as someone has no more chips left, he lost and has to leave the table.
+Every round consists of different stages of card dealing and then successive betting. In each stage a player can decide if and how much chips he wants to play according to some rules and by evaluating their private cards called “hand” and the cards open on the table named sequentially “flop”, “turn” and “river”.
+The total amount of chips from all the players in one round is called “pot”. Every round ends with either one player getting the whole pot or sometimes with a split of the pot, if two or more players have an equivalent “score” in the end of the round. The score is the highest possible combination of the private and public cards available according to a fixed ranking.
 \\
-The game can be played with a varying number of people and for simplicity be subdivided into 2 parts: Group stage and Heads up, whereby the main difference lies in the number of people playing: During the heads up there are only the 2 remaining people playing for the overall victory, and therefore every game of Texas Holdem will end with a heads up.
+The game can be played with a varying number of people and for simplicity be subdivided into two parts: “Group stage” and “Heads up”, whereby the main difference lies in the number of people playing. In a heads up the last two remaining players are gambling for the overall victory and therefore every game of Texas Hold’em will end with a heads up.
 \\
-Every player has his own strategy, where some players like to play more conservative by not betting often and waiting for better cards, whereas others play more aggressive by betting more often and/or bluffing. An important aspect of the game are the blinds, since they obligate two players to bet a fixed amount before the first cards are dealt. The blinds move forward by one player after every round. They guarantee that no player can wait for the perfect cards to play, and that there are always chips in the pot which can be won.
+Every player has his own strategy, where some players like to play more conservative by not betting often and waiting for better cards and others play more aggressive by betting more often and trying to bluff his opponent. An important aspect of the game is the “blinds”, since they force the players to bet a fixed amount before the first cards are dealt. The blinds move forward by one player after every round. They guarantee that no player only can wait for the perfect cards and that there are always chips in the pot that can be won.
+\\							
+In our group we all are regular Texas Hold’em players. Therefore we all have lived through the following situation dozens of times: After every game played, a discussion is held about certain hands which should or shouldn’t be played and about the best approach on how to decide in this situations. We all agree that Texas Hold’em is about knowing your opponent and play “smarter” or “better” than him. Therefore it is not possible to have a fixed strategy. One has to be able to adjust his strategy depending on the way the opponent is playing and vice-versa.
 \\
-In our group, we all privately are regular Texas Holdem players. Therefore we have all lived through the following situation dozens of times: After every game played starts the discussion about certain hands which should or shouldnt be played and about the best approach on how to decide. We all agree that Texas Holdem is about knowing your opponent and play smarter or better than him. Therefore it is not possible to have a fixed strategy; one has to be able to adapt his strategy depending on the way his opponent is playing and vice-versa.
-\\
-After a lost game the temptation to say that it is all about the luck of certain player is great. But since there are only few professionals making a decent living of Texas Holdem than people trying, it clearly shows that luck is not the most important factor. There are Players who can adapt their strategy way better than others.
-\\
-Therefore we all often wondered what would be good strategies to adapt best to ones opponent and in particularly how effective such strategies are. To make a valuable assumption about the effectiveness of such a strategy, one would need to play an enormous amount of games to formulate a statistically speaking valid statement. This would be very time expensive cumbersome. If a whole game or at least some parts of it can be simulated repeatedly under different circumstances and with different strategy approaches, then one could gain deeper insights into Texas Holdem and possibly develop an applicable strategy or at least compare different approaches.
+CHAME USENÄH FINDE I
+After a lost game the temptation to say that it is all about the luck of certain player is great. But since there are only few professionals making a decent living of Texas Hold’em than people trying, it clearly shows that luck is not the most important factor. There are Players who can adjust their strategy way better than others.\\ 
+Therefore we all often wondered what would be good strategies to best adjust to one’s opponent and in particularly how effective such strategies are. To make a valuable assumption about the effectiveness of such a strategy, one would need to play an enormous amount of games to formulate a statistically speaking valid statement. If a whole game or at least some parts of it can be simulated repeatedly under different circumstances and with varying strategies, then one could gain deeper insights into Texas Hold’em and possibly develop an applicable strategy or at least compare different approaches.
 
 \section{Description of the Model}
-
-
 
 \subsection{Generic Model}
 
 \paragraph{Card replacement}
-The main aspect making poker a very difficult and complicated game to simulate is its use of cards. Hence our main goal was to find a model, which didnt require the implementation of a deck of cards. In order to achieve this effect every player is given a random value, called "Cardvalue" between 0 and 1, representing the worth of his hand, whereas 0 would be a very bad hand and vice versa. In poker the hands cannot be arranged in a chronological order according to their ability to win a headsup, because this ability always depends on the hand from your opponent. Therefore the Cardvalue cannot be assigned to a specific hand, it only rates the hands specific ability to win.
+The main aspect making poker a complicated game to simulate is its use of cards. Hence our main goal was to find a model, which did not require the implementation of a deck of cards. In order to achieve a simular effect every player is given a random number, called "card value" between zero and one, representing the quality of his hand, whereas 0 would be the worst hand and 1 the best. 
 
-\paragraph{Cardvalue adjust}
-Since in poker there are continuesly being new cards unveiled, which change the worth of a hand this effect had also to be taken in account by modifying the card value slightly during the headsup. Because the impact of a single new card on the worth of a hand decreases during the game, this modification has to be implemented, such that new cardvalue is more likely to stay around the old cardvalue as the headsup goes on.
+\paragraph{Card value adjustment}
+In poker, new cards countinuously are being unveiled, which changes the score of a hand. This aspect has to be taken in account by modifying the card value during the one hand. The impact of the new cards on the score of a hand decreases during the game. We implemented this such as in the beginning the new card value varies a lot and at the end it is more likely to stay around the old card value.
 
-\paragraph{Riskfactor}
-During the game the player has to decide wheter calls or wheter he quits the game, meaning he has to decide wheter his hand is good enough to continue playing. This is achieved with the so called "riskfactor", which is determining the character of a player. It is again a number between 0 and 1, whereas a smaller number represents a riskier player.
+\paragraph{Risk factor}
+During the game a player has to decide whether to call or to drop out of the heads up, meaning he has to evaluate if his score is good enough to continue playing. This is achieved with the so called "risk factor", which determines the character of a player. It is again a number between 0 and 1, whereas a smaller number represents a riskier player.
 
 \paragraph{Blind}
-Just as in real Poker a blind has been implemented. At the beginning of every headsup alternatingly one player has to pay the blind, without having seen his cards yet.
+Just as in real Poker a blind has been implemented. At the beginning of every heads up, alternately one player has to pay the blind without having seen his cards yet. In our model only a single fixed blind has been implemented, since in a heads up only the difference in  blinds is relevant.
 
 \paragraph{Betting}
-With every new card unveiled alternately the players face the decision wheter to call, raise or quit. By comparing their riskfactors to their cardvalue they decides what to do. In total this situation arises 4 times per headsup. Each time both players can raise their bet by 1 money unit. In the event of an all-in situation or 1 player dropping out the showdown is carried out.
+With every new card unveiled alternately the players face the decision whether to place a bet or not. Their action is determined by comparing their risk factors to their score. In total this scenario occures up to four times per hand. Each time both players can place a bet of one chip.
 
 \paragraph{Showdown}
-In the showdown the winner of the headsup is evaluated and the betted money distributed accordingly. If both players have betted to the end or an all-in situation has occured, the player with the better hand wins all the money. If both players have the same cardvalue the pot is splitt evenly.
-
+A showdown occurs when both players bet until the end. There the winner of a hand is evaluated and he receives all chips bet (pot). If both players have the same score the pot is split.
 \subsection{Learning models}
 An important part of real Texas Hold’em is to obtain an advantage by estimating the strategy of your opponent and to react accordingly.
 However in this model two different approaches for learning algorithms have been chosen to optimize a players strategy:
