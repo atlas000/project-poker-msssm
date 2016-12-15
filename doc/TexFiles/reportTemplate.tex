@@ -12,7 +12,7 @@
 \usepackage{multicol}
 \usepackage{color}           
 \usepackage{hyphenat}
-
+\usepackage{booktabs}
 
 
 
@@ -155,27 +155,56 @@ CHAME USENÄH FINDE I
 After a lost game the temptation to say that it is all about the luck of certain player is great. But since there are only few professionals making a decent living of Texas Hold’em than people trying, it clearly shows that luck is not the most important factor. There are Players who can adjust their strategy way better than others.\\ 
 Therefore we all often wondered what would be good strategies to best adjust to one’s opponent and in particularly how effective such strategies are. To make a valuable assumption about the effectiveness of such a strategy, one would need to play an enormous amount of games to formulate a statistically speaking valid statement. If a whole game or at least some parts of it can be simulated repeatedly under different circumstances and with varying strategies, then one could gain deeper insights into Texas Hold’em and possibly develop an applicable strategy or at least compare different approaches.
 
-\section{Description of the Model}
 
-\subsection{Generic Model}
+\section{Model and implementation}
 
-\paragraph{Card replacement}
-The main aspect making poker a complicated game to simulate is its use of cards. Hence our main goal was to find a model, which did not require the implementation of a deck of cards. In order to achieve a simular effect every player is given a random number, called "card value" between zero and one, representing the quality of his hand, whereas 0 would be the worst hand and 1 the best. 
+ 
 
-\paragraph{Card value adjustment}
-In poker, new cards countinuously are being unveiled, which changes the score of a hand. This aspect has to be taken in account by modifying the card value during the one hand. The impact of the new cards on the score of a hand decreases during the game. We implemented this such as in the beginning the new card value varies a lot and at the end it is more likely to stay around the old card value.
+This section serves to understand how we through our code implemented the simulation. Expressions are introduced that we use throughout the report. One can find the whole program on git in the folder code.
 
-\paragraph{Risk factor}
-During the game a player has to decide whether to call or to drop out of the heads up, meaning he has to evaluate if his score is good enough to continue playing. This is achieved with the so called "risk factor", which determines the character of a player. It is again a number between 0 and 1, whereas a smaller number represents a riskier player.
+ 
 
-\paragraph{Blind}
-Just as in real Poker a blind has been implemented. At the beginning of every heads up, alternately one player has to pay the blind without having seen his cards yet. In our model only a single fixed blind has been implemented, since in a heads up only the difference in  blinds is relevant.
+\subsection{main.m}
 
-\paragraph{Betting}
-With every new card unveiled alternately the players face the decision whether to place a bet or not. Their action is determined by comparing their risk factors to their score. In total this scenario occures up to four times per hand. Each time both players can place a bet of one chip.
+The script ultra-main plays all the different risk factors against each other and saves the amount of wins by player1 in a matrix.\\
 
-\paragraph{Showdown}
-A showdown occurs when both players bet until the end. There the winner of a hand is evaluated and he receives all chips bet (pot). If both players have the same score the pot is split.
+The risk factor determines the character of a player. It is stored with a number between 0 and 1, whereas a smaller number represents a riskier player that plays a hand even if his score is not that high and vice versa.
+
+%is that during the game a player has to decide whether to call or to drop out of a hand. In other words, he has to evaluate if his score is good enough to continue playing.
+
+The function main.m serves as an interface where one can decide on the settings through variables which then get passed on to the function game.
+
+ 
+
+\subsection{game.m}
+
+The function game.m is used to call the functions headsup/2. Like in real poker game.m continues to deal new hands until one player has run out of money. It is alternately calling two functions that differ only in which player has to pay the blind.\\
+
+As described above, a blind is essential to the game of Texas Hold'em. A player has to pay some money into the pot without having seen his cards yet. That way if a player is very passive, he looses money anyway and has to become more active at some point. \\
+
+In our model only a single fixed blind has been implemented, since in a heads up only the difference in blinds is relevant.
+
+ 
+
+\subsection{headsup.m}
+
+The headsup.m function simulates one hand of poker which consists of up to four rounds. With every new card unveiled each player faces the decision whether to place a bet or not. Their action is determined by comparing their risk factors to their score. In total this scenario occurs up to four times per hand. If both players want to play until the end, a showdown determines the winner. Meaning that they have to show their cards and the one with the better score wins the hand and receives the pot\\
+
+In the first round the 'preflop' one player has to pay the blind and each player gets a set of playing card.\\
+
+The main aspect making poker a complicated game to simulate is its use of cards. Hence our main goal was to find a model, which did not require the implementation of a deck of cards. In order to achieve a similar effect every player is given a random number, called "card value". The number reaches from 0 to 1 and represents the quality of the hand, whereas 0 would be the worst hand and 1 the best.\\
+
+In the next three rounds the 'flop', 'turn' and 'river' new cards get unveiled on the table. So the score of the players' hands has to be adjusted.
+
+ 
+
+\subsection{adujstCardValue.m}
+
+At the heart of this simulation lies the adjustCardValue function, which recalculates the card value of a player.\\
+
+Important criteria are that the cards correlate with each other, so if a player has good cards it is likely that his hand is still good when a new round is played. But also should it be possible for a value to reach the whole spectrum of card quality from 0 to 1. This is important because if one has a bad starting hand it should still be possible, with some luck, to get the best hand possible after the flop. Hence every value should be possible to receive but not with the same probability.\\
+
+
 \subsection{Learning models}
 An important part of real Texas Hold’em is to obtain an advantage by estimating the strategy of your opponent and to react accordingly.
 However in this model two different approaches for learning algorithms have been chosen to optimize a players strategy:
@@ -240,133 +269,245 @@ Disadvantages:
 ·         The algorithm requires a precise knowledge of all possible outcomes and therefore is only applicable in the same circumstances the data was obtained.
 We had to take in account an estimation error as long as the number of hands played is low.
 
+ 
+
+ 
+
+\section{Robustness of results and model}
+
+ 
+
+To ensure that our model is robust enough to draw some conclusion from we performed thousand games a thousand times and found a standard deviation of 7.7 for the wins. This means the resulting wins after thousand games are precise on $\pm$7:7.\newline
+
+ 
+
+The reason behind the sigma we chose for the flop as 0.4 is, because there three new cards are dealt and a big variety of outcomes is needed. But the difference in the card value before and after new cards cannot be to wide, otherwise all correlation is lost.\\
+
+In the next two rounds where only one card is dealt the current card value has to be stable. We found 0.2 to be best choice because 0.1 is too stable, so there would almost not be any difference in the card value.\\
+
+ 
+
+We have tried a some different of sigma and came to the conclusion that this combination the resulting graph would be the same in its form just shifted more to the left or the right of the x and y scale. We chose the combination of 0.4/0.2/0.2 to be the one that represents a game of Texas Hold'em the best. \\
+
+Sigma have been tested on their reach from 0 to 1 and lowest/highest possible value for each risk factors. The results are found on git.....
 
 
 
 
-
-
-
-\section{Implementation}
-In this chapter the Implementaion of the simulation is discribed in the following manner:
-\begin{itemize}
-\item Overview \& organisation of files
-\item Detailed description of scripts and functions
-    \begin{itemize}
-    	\item adjustCardValue.m
-        \item headsup.m
-        \item game.m
-        \item main.m
-        \item ultramain.m
-    \end{itemize}
-\item List of all variables and their purpose
-\end{itemize}
-
-Overview and organisation of files 
-%%%%%
-In the poker-simulation multiple games with different strategies are played. Each game consists again of multiple parts called hands and each hand consists of up to four rounds.
-
-\subsection{Organisation of files}
-%%%%%
-\begin{minipage}{0.48\textwidth}
-\includegraphics[width=\textwidth]{Graphics/diagram_senkrecht.pdf}
-\end{minipage}
-\begin{minipage}{0.48\textwidth}
-For better overview the script consists of a main file that repeatedly calls a function \textit{game.m}, which simulates a complete game. The function \textit{game.m} calls a function \textit{headsup.m} that simulates one hand, until one player has run out of money (game complete). The function \textit{game.m} is called by the function{main.m}, where all relevant variabes, relevant for the simulation are defined.
-After multiple tests an additional script \textit{ultramain.m} has been written to feed {main.m} with different risk-values.\\
-\end{minipage}
-
-
-
-%%%%
-
-
-%%%
-%%%%%
+%\section{Description of the Model}
+%
+%\subsection{Generic Model}
+%
+%\paragraph{Card replacement}
+%The main aspect making poker a complicated game to simulate is its use of cards. Hence our main goal was to find a model, which did not require the implementation of a deck of cards. In order to achieve a simular effect every player is given a random number, called "card value" between zero and one, representing the quality of his hand, whereas 0 would be the worst hand and 1 the best. 
+%
+%\paragraph{Card value adjustment}
+%In poker, new cards countinuously are being unveiled, which changes the score of a hand. This aspect has to be taken in account by modifying the card value during the one hand. The impact of the new cards on the score of a hand decreases during the game. We implemented this such as in the beginning the new card value varies a lot and at the end it is more likely to stay around the old card value.
+%
+%\paragraph{Risk factor}
+%During the game a player has to decide whether to call or to drop out of the heads up, meaning he has to evaluate if his score is good enough to continue playing. This is achieved with the so called "risk factor", which determines the character of a player. It is again a number between 0 and 1, whereas a smaller number represents a riskier player.
+%
+%\paragraph{Blind}
+%Just as in real Poker a blind has been implemented. At the beginning of every heads up, alternately one player has to pay the blind without having seen his cards yet. In our model only a single fixed blind has been implemented, since in a heads up only the difference in  blinds is relevant.
+%
+%\paragraph{Betting}
+%With every new card unveiled alternately the players face the decision whether to place a bet or not. Their action is determined by comparing their risk factors to their score. In total this scenario occures up to four times per hand. Each time both players can place a bet of one chip.
+%
+%\paragraph{Showdown}
+%A showdown occurs when both players bet until the end. There the winner of a hand is evaluated and he receives all chips bet (pot). If both players have the same score the pot is split.
+%
+%
+%\subsection{Learning models}
+%An important part of real Texas Hold’em is to obtain an advantage by estimating the strategy of your opponent and to react accordingly.
+%However in this model two different approaches for learning algorithms have been chosen to optimize a players strategy:
+%\begin{itemize}
+%\item One approach was to adapt the strategy in order to minimize the losses and thus maximize the profit of a player. This model analyses a players own performance. (model Tim \& Jan)% and therefore only depends on his strategy 
+%\item  The other approach was to first analyse the play of the opponent and then choose the optimal strategy to best counter the other player, this of course is only possible if all outcomes for all strategies are known to the player which was the case in this model (model Patrice \& Lionel)\\
+%\end{itemize}
+%Furthermore we took the assumption, that the opponent plays strictly regular and thus no ability to learn.
+%
+%\subsubsection{Threshold model}
+%
+%The target of this learning model is to determine the riskfactor from player 2, which then enables to find the optimal riskfactor for player 1 for which his winning probability is increased.
+%Everytime a showdown is conducted player 1 gets to know the cardvalue from player 2. Because player 2 has continued the headsup with this cardvalue until the showdown it is known, that the riskfactor from player 2 has to be lower than said cardvalue. With every showdon executed the possible values for riskfactor from player 2 can be narrowed down, leaving a threshold which has to be undershot by player 2's riskfactor.
+%
+%
+%The optimal riskfactor from player 1 can then be determined with the "50 Games" Matrix. This matrix includes the winprobality for player 1 for all possible combinations of riskfactors between both players. Determining the optimal riskfactor for player 1 is then only a matter of finding the maximum in a certain area of the matrix.
+%
+%
+%
+%
+%\subsubsection{Bacon model}
+%This learning algoritm analyzes the loss of the last hand, because if the last hand has been won there is no need to adapt the strategy. So after every hand one of the following scenarios take place\\
+%\renewcommand{\arraystretch}{1.4}
+%\begin{tabular}{ p{6.45cm}   p{5.1cm}  p{2.4cm}}
+%%\hline
+%Validation & Interpretation & Action\\
+%%\end{tabular}
+%\addlinespace
+%%\begin{tabular}{ p{6.2cm}  | p{5.1cm} | p{2.7cm}}
+%%\hline
+%CapitalP-($t+1$) $>=$ Capital($t$) &	The player had equal or better cards, or the hand has not been played&
+%r will not be changed \\
+%%\hline
+%\addlinespace
+%CapitalP-$(t+1) ==$ Calpital$(t)-4$	&	The player has lost after the showdown and is thus to agressive & \ r=r+0.012\\
+%%\hline
+%\addlinespace
+%Else (CapitalP- dropped by 1,2 or 3) &	The player is to passive, since it did not come to a showdown & \ R2=R2+0.003\\
+%%\hline
+%
+%
+%\end{tabular}
+%
+%\subsubsection{Count and gauge model}
+%
+%The main goal behind analysing the opponent’s way of playing is to correctly estimate his risk factor, in order to adapt one’s risk factor afterward. 
+%Our algorithm accomplishes this in 2 consecutive steps:
+% 
+%(Only necessary in case it is not mentioned In the introduction The opponent plays strictly regular, and every card value is equally alike.) Hence the algorithm keeps track of the number of times the opponent decides to play the first round when he is not forced to do so by the blind, called “nroundsplayed”. The ratio between this value and the total amount of rounds played called “nrounds” can then be used as a measurement to estimate the opponent’s risk factor, called “RF” as followed:
+% 
+%Formula RF= 1 –(nrounds/nroundsplayed)
+% 
+%The second part consist of finding the optimal counterpart to the risk factor estimated in above. For that reason we evaluated results obtained by simulating almost all possible combination of strategies. The data obtained indicates, that for every risk factor chosen, there is at least one optimal counterpart. After extracting these values, the algorithm can adjust the own risk factor referring to these values.
+% 
+%Advantages:
+%·         With an increasing number of rounds, the estimation continuously gets better
+%·          On a long run he will always play the most suitable strategy and optimize his return.
+%·         It reaches a good estimation of the opponents risk factor already after a few rounds
+%·         The algorythm could also use the rounds where the other player has to pay the blind by counting the number of consecutive rounds he plays and applying the same strategy just by including the models standartdeviation into the calculus. This would lead to a faster estimation of the opponents risk factor.
+% 
+%Disadvantages:
+%·         The algorithm requires a precise knowledge of all possible outcomes and therefore is only applicable in the same circumstances the data was obtained.
+%We had to take in account an estimation error as long as the number of hands played is low.
+%
+%
+%
+%
+%
+%
+%
+%
+%\section{Implementation}
+%In this chapter the Implementaion of the simulation is discribed in the following manner:
+%\begin{itemize}
+%\item Overview \& organisation of files
+%\item Detailed description of scripts and functions
+%    \begin{itemize}
+%    	\item adjustCardValue.m
+%        \item headsup.m
+%        \item game.m
+%        \item main.m
+%        \item ultramain.m
+%    \end{itemize}
+%\item List of all variables and their purpose
+%\end{itemize}
+%
+%Overview and organisation of files 
+%%%%%%
+%In the poker-simulation multiple games with different strategies are played. Each game consists again of multiple parts called hands and each hand consists of up to four rounds.
+%
+%\subsection{Organisation of files}
+%%%%%%
+%\begin{minipage}{0.48\textwidth}
+%\includegraphics[width=\textwidth]{Graphics/diagram_senkrecht.pdf}
+%\end{minipage}
+%\begin{minipage}{0.48\textwidth}
 %For better overview the script consists of a main file that repeatedly calls a function \textit{game.m}, which simulates a complete game. The function \textit{game.m} calls a function \textit{headsup.m} that simulates one hand, until one player has run out of money (game complete). The function \textit{game.m} is called by the function{main.m}, where all relevant variabes, relevant for the simulation are defined.
 %After multiple tests an additional script \textit{ultramain.m} has been written to feed {main.m} with different risk-values.\\
+%\end{minipage}
 %
-%\begin{figure}[h!]
+%
+%
+%%%%%
+%
+%
+%%%%
+%%%%%%
+%%For better overview the script consists of a main file that repeatedly calls a function \textit{game.m}, which simulates a complete game. The function \textit{game.m} calls a function \textit{headsup.m} that simulates one hand, until one player has run out of money (game complete). The function \textit{game.m} is called by the function{main.m}, where all relevant variabes, relevant for the simulation are defined.
+%%After multiple tests an additional script \textit{ultramain.m} has been written to feed {main.m} with different risk-values.\\
+%%
+%%\begin{figure}[h!]
+%%\centering
+%%\includegraphics[scale=0.55]{Graphics/diagramm_waagrecht.pdf}
+%%\caption{Simplified sceme of relations of relevant scriptes\label{Abbildung}}
+%%\end{figure}
+%
+%
+%
+%\subsubsection{adjustCardValue.m}
+%At the heart of this simulation lies the adjustCardValue function, which recalculates the card value of a player. Important criteria are that the cards correlate with each other, so if a player has good cards it is likely that his hand is still good when a new phase is played, but also should it be possible to for a value to reach the whole spectrum of card quality from 0 to 1. This is important because for an example in real Texas Holdem if one has a bad starting hand but with some luck to have the best hand possible after the flop. Hence every value should be possible but not with the same probability.\\
+%The way we implemented this mechanism is that the function receives the old card value and a number between 0 and 1 we call sigma. Then the function calculates the new value based on the normal distribution where the old card value sets the middle of the curve and the sigma determines how fast probability fades down to zero. A very high sigma means that the recalculated value has the chance to be on the whole spectrum and a very low sigma computes a new card value close to the old one.
+%We chose the sigma for the flop as 0.4 because there three new cards are dealt and a big variety of outcomes is needed. In the next two rounds where only one card is dealt the current card value has to be stable so the chosen sigma there is 0.2.\\
+%The first line of Table ??? shows the card value that needs to be recalculated and line two represents the average of a hundred new card values. This shows that with a sigma of 0.2 the average is pretty stable. The values at the top and bottom differ a little bit more because there is a set boundary at zero and one. Hence at 0.9 there are maybe as many values above this number as there are below but the ones underneath reach much lower.\\
+%Table two shows the highest and lowest possible resulting value of certain incoming number over a hundred played games. Whereas the first line represents the old card value, line two the highest and line three the lowest possible value. This data supports the choice of a sigma of 0.4 because every value has the potential to reach the whole spectrum.
+%
+%\begin{table}[]
 %\centering
-%\includegraphics[scale=0.55]{Graphics/diagramm_waagrecht.pdf}
-%\caption{Simplified sceme of relations of relevant scriptes\label{Abbildung}}
-%\end{figure}
-
-
-
-\subsubsection{adjustCardValue.m}
-At the heart of this simulation lies the adjustCardValue function, which recalculates the card value of a player. Important criteria are that the cards correlate with each other, so if a player has good cards it is likely that his hand is still good when a new phase is played, but also should it be possible to for a value to reach the whole spectrum of card quality from 0 to 1. This is important because for an example in real Texas Holdem if one has a bad starting hand but with some luck to have the best hand possible after the flop. Hence every value should be possible but not with the same probability.\\
-The way we implemented this mechanism is that the function receives the old card value and a number between 0 and 1 we call sigma. Then the function calculates the new value based on the normal distribution where the old card value sets the middle of the curve and the sigma determines how fast probability fades down to zero. A very high sigma means that the recalculated value has the chance to be on the whole spectrum and a very low sigma computes a new card value close to the old one.
-We chose the sigma for the flop as 0.4 because there three new cards are dealt and a big variety of outcomes is needed. In the next two rounds where only one card is dealt the current card value has to be stable so the chosen sigma there is 0.2.\\
-The first line of Table ??? shows the card value that needs to be recalculated and line two represents the average of a hundred new card values. This shows that with a sigma of 0.2 the average is pretty stable. The values at the top and bottom differ a little bit more because there is a set boundary at zero and one. Hence at 0.9 there are maybe as many values above this number as there are below but the ones underneath reach much lower.\\
-Table two shows the highest and lowest possible resulting value of certain incoming number over a hundred played games. Whereas the first line represents the old card value, line two the highest and line three the lowest possible value. This data supports the choice of a sigma of 0.4 because every value has the potential to reach the whole spectrum.
-
-\begin{table}[]
-\centering
-\caption{Old and new card values with a sigma 0.2}
-\label{my-label}
-\begin{tabular}{lllllllll}
-0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9\\
-\addlinespace
-0.177 & 0.224 & 0.312 & 0.401 & 0.504 & 0.616 & 0.645 & 0.766 & 0.787 \\   
-\end{tabular}
-\caption{Highest and lowest possible card values with a sigma 0.4}
-\label{my-label}
-\begin{tabular}{lllllllll}
-0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9\\
-\addlinespace
-0.9014& 0.9871 & 0.9972 & 0.9596 & 0.9984 & 0.9918 & 0.9992 & 0.9960 & 0.9944\\
-\addlinespace
-0.0045 & 0.0008 & 0.0008 & 0.0108 & 0.0035 & 0.0068 & 0.0962 & 0.0218 & 0.0071 \\   
-\end{tabular}
-\end{table}
-
-\subsubsection{headsup.m}
-The core function, on which the simulation is built around. Is called headsup.m. It simulates one poker hand and consists of up to four rounds, where players can bet money on their win. At the end of a hand a showdown determines the winner, who can increase his capital by up to four betValues, while the losers capital decreases by the same amount.\\
-%sketchy \renewcommand{\arraystretch}{1.4}
-
-
-
-
-
-
-\begin{center}
-\begin{tabular}{c c}
-Inputs & Outputs\\
-
-\hline
-CapitalP1,-P2 & CapitalP1,-P2\\
-
-RiskfactorP1,-P2\\
-BetValue\\
-\end{tabular}\\
-\end{center}
-
-
-
-
-
-
-At the beginning of headsup each player gets a random (Card-)value Val between 0 and 1, this value replaces his two handcards in this simplified simulation. In a next step the player with a blind is forced to place this blind in the pot. The other player can decide if he wants to place an equal amount in the pot.  Of course, the placement of money in the pot reduces the capital of a player. After both players decided to play (preflop), their card-values Val are altered in the next step, that should resemble the Flop of a normal poker game. Afterwards the players get another chance to place a bet, which is followed by the river, where once more both (Card-)values are slightly altered. This is followed by a last chance to place another bet before the showdown. In which the player with the better Card-Value wins the money in the pot.
-
-\subsubsection{game.m}
-The function game.m is used to call the function headsup. Like in real poker game.m continues to call headsup, until one player has run out of money. To do so a while loop has been used. Game.m has the following input variables:
-RiskfactorP1,-P2
-CapitalP1,-P2
-BetValue
-The output of the function game is the winning player.
-\subsubsection{main.m}
-In the function main.m all important variables are defined and passed on the function game.
-Additionally to that the variables needed to in the function main the number of games played is defined.
-Ultra-main: Is an additional script used to efficiently vary risk-factor one and two and to display the results in the form of a matrix.
-%%%%--------------List of Variables----------------%%%%
-
-
-%%%%--------------/List of Variables----------------%%%%
-
-
-
-
+%\caption{Old and new card values with a sigma 0.2}
+%\label{my-label}
+%\begin{tabular}{lllllllll}
+%0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9\\
+%\addlinespace
+%0.177 & 0.224 & 0.312 & 0.401 & 0.504 & 0.616 & 0.645 & 0.766 & 0.787 \\   
+%\end{tabular}
+%\caption{Highest and lowest possible card values with a sigma 0.4}
+%\label{my-label}
+%\begin{tabular}{lllllllll}
+%0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9\\
+%\addlinespace
+%0.9014& 0.9871 & 0.9972 & 0.9596 & 0.9984 & 0.9918 & 0.9992 & 0.9960 & 0.9944\\
+%\addlinespace
+%0.0045 & 0.0008 & 0.0008 & 0.0108 & 0.0035 & 0.0068 & 0.0962 & 0.0218 & 0.0071 \\   
+%\end{tabular}
+%\end{table}
+%
+%\subsubsection{headsup.m}
+%The core function, on which the simulation is built around. Is called headsup.m. It simulates one poker hand and consists of up to four rounds, where players can bet money on their win. At the end of a hand a showdown determines the winner, who can increase his capital by up to four betValues, while the losers capital decreases by the same amount.\\
+%%sketchy \renewcommand{\arraystretch}{1.4}
+%
+%
+%
+%
+%
+%
+%\begin{center}
+%\begin{tabular}{c c}
+%Inputs & Outputs\\
+%
+%\hline
+%CapitalP1,-P2 & CapitalP1,-P2\\
+%
+%RiskfactorP1,-P2\\
+%BetValue\\
+%\end{tabular}\\
+%\end{center}
+%
+%
+%
+%
+%
+%
+%At the beginning of headsup each player gets a random (Card-)value Val between 0 and 1, this value replaces his two handcards in this simplified simulation. In a next step the player with a blind is forced to place this blind in the pot. The other player can decide if he wants to place an equal amount in the pot.  Of course, the placement of money in the pot reduces the capital of a player. After both players decided to play (preflop), their card-values Val are altered in the next step, that should resemble the Flop of a normal poker game. Afterwards the players get another chance to place a bet, which is followed by the river, where once more both (Card-)values are slightly altered. This is followed by a last chance to place another bet before the showdown. In which the player with the better Card-Value wins the money in the pot.
+%
+%\subsubsection{game.m}
+%The function game.m is used to call the function headsup. Like in real poker game.m continues to call headsup, until one player has run out of money. To do so a while loop has been used. Game.m has the following input variables:
+%RiskfactorP1,-P2
+%CapitalP1,-P2
+%BetValue
+%The output of the function game is the winning player.
+%\subsubsection{main.m}
+%In the function main.m all important variables are defined and passed on the function game.
+%Additionally to that the variables needed to in the function main the number of games played is defined.
+%Ultra-main: Is an additional script used to efficiently vary risk-factor one and two and to display the results in the form of a matrix.
+%%%%%--------------List of Variables----------------%%%%
+%
+%
+%%%%%--------------/List of Variables----------------%%%%
+%
+%
+%
+%
 
 \section{Simulation Results and Discussion}
 \subsection{Results of generic model}
@@ -390,7 +531,16 @@ We translate these findings into real Texas Hold’em as follows: In General a p
 Inside the Interval $[0.45 < r1,r2 < 0.55]$ where both players adopt a balanced strategy, the same applies but with less certainty of a fixed outcome. In our eyes this represents the influence of luck during Texas Hold’em. The loss of a too aggressive player is easily explained by the fact that such a player will lose a lot more often than he wins because he also playes weak hands. A too agressive player looses mianly due to the blinds because his card score often drops below his risk factor, before the showdown.
 
 \subsection{Results of learning algorithms}
-\subsubsection{Bacon model}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=.2]{Graphics/LearningAllThreeWins}
+\end{center}
+\caption{Resulting win matrices for all three learning models. From left to right: threshold, count and gauge, $bacon$}
+\label{LearningModelsAllDataOverview}
+\end{figure}
+
+\subsubsection{$Bacon model$}
 
 \begin{figure}[h!]
 \centering
@@ -408,28 +558,80 @@ The model has a great potential for different kinds of optimization:
 \item more cases for different scenarios could be made (different action for loss of 1 and loss of two)
 \item the cards that the player has could be taken into account in order to avoid a change in policy if there has just been bad luck with the cards 
 \end{itemize}
- & The algorithm is based on a simplified scenario, where the only reason for a loss is besed on the strategy and never on luck. This leads in some cases to a change of policy even when this is not desired. This can be observed in the high standart deviation, even after haveing fond a well estimated r. This behavior leeds to the algorithm loosing against extreemly strong strategies due to its contious slight deviations from the optimum  riskvalue.\\ 
+ & The algorithm is based on a simplified scenario, where the only reason for a loss is besed on the strategy and never on luck. This leads in some cases to a change of policy even when this is not desired. This can be observed in the high standart deviation, even after haveing fond a well estimated r. This behavior leeds to the algorithm loosing against extreemly strong strategies due to its continous slight deviations from the optimum  riskvalue.\\ 
 \end{tabular}
 
 \subsubsection{Count and Gauge model}
 
 \subsubsection{Threshold model}
 
+In figure \ref{LearningModelsAllDataOverview} the results from the learning algorithm can clearly be seen. First of all the graph shows, that the resulting wins are independent from the learning player's risk factor because results are nearly constant along a horizontal line. Next it is visible that the algorithm does not have the same effectiveness for all oponent strategies. For an oponent risk factor between 0 and 0.4 and also around 0.8 the algorithm is really succesfull, as can be seen with the highly yellow areas in the plot, which represent a lot of wins for the learning player. From the green band at an oponent riskfactor of around 0.45 it can be seen that wins are equally balanced around this point. In the blue area for an oponents risk factor between 0.5 and 0.75 wins for the learning player are infrequent. This mean that the algorithm there fails to provide an advantage over the oponent.\\
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=.3]{Graphics/allDataWins_Threshold_Difference}
+\end{center}
+\caption{Topview of difference from results of threshold learning model and generic model with blinds}
+\label{allDataWins_Threshold_Difference}
+\end{figure}
+
+By subtracting the resultant matrix from generic model with blinds from that of the learning algorithm it can be visualized where the threshold learning algorithm improves the game results and where it fails to do so. This is shown in figure \ref{allDataWins_Threshold_Difference}. The highly yellow areas show a drastic improvement in performance, whereas the green areas represent scopes where the performance could only be slightly changed or even remained the same. The deep blue areas show scopes in which the learning players performance has declined drasticly.\\
+
+The behaviour of the learning model in the green and yellow areas can be explained as follows: since the performance from the learning player in the green areas was already good with the generic model no big improvement could be realized the difference in wins therefore leveled off in these sections. The yellow areas underly low performance regions in the generic model with blinds, thus a big improvement could realised an the difference in wins rocketed.\\
+
+What stays to explain are the not expected blue areas. In the blue area at a risk factor of 0.9 the oponent play extremely passive. Hence a showdown seldom occurs and the learning algorithm cannot take effect. However this can only explain the failure of the learning aspect of the algorithm but not the loss of the learning player. The second blue areas behaviour can be explained by the addition of two effects. Firstly the gradient of the generic result matrix is extremy steep, thus already a slight misestimate in the oponents risk factor can lead to a big change in the optimal risk factor for the learning player. Secondly because in the turn the oponent can also play a hand up to 0.15 lower than his risk factor the estimation for his riskfactor can also be shifted downwards by up to 0.15 and therefore lead to a miscalculation in the optimal risk factor for the learning player.
+
+
+\subsection{Comparison of learning algorithm performances}
+
+
+\begin{table}[]
+\centering
+\caption{Learning models overview figures}
+\label{Learning models overview}
+\begin{tabular}{lcccccc}
+\cline{2-7}
+                                           & \multicolumn{2}{c}{\# Games won}                      & \multicolumn{2}{c}{\# Hands played}                   & \multicolumn{2}{c}{$\Delta$games won} \\ \cline{2-7} 
+\multicolumn{1}{c|}{}                       & \multicolumn{1}{c|}{$\mu$} & \multicolumn{1}{c|}{$\sigma$} & \multicolumn{1}{c|}{$\mu$} & \multicolumn{1}{c|}{$\sigma$} & \multicolumn{1}{c|}{$\mu$} & $\sigma$ \\ \hline
+\multicolumn{1}{l|}{Threshold model}       & 605.7777                   & \multicolumn{1}{c|}{301.3260} & 1565                       & \multicolumn{1}{c|}{1854}     & 105.9853                   & 501.7773 \\ \hline
+\multicolumn{1}{l|}{Count and gauge model} & 690.6369                   & \multicolumn{1}{c|}{343.1811} & 709.3543                   & \multicolumn{1}{c|}{342.5163} & 190.8446                   & 477.6301 \\ \hline
+\multicolumn{1}{l|}{Bacon model}           & 647.55                     & \multicolumn{1}{c|}{}         & 110020                     & \multicolumn{1}{c|}{748600}   &                            &          \\ \hline
+
+\end{tabular}
+\end{table}
+
+
+In table \ref{Learning models overview} some characteristic values for the learning algorithms are displayed. Therefore the mean and standard deviation of the resulting wins matrix, total hands played matrix and the difference in the wins matrix with and without the learning algorithm have been calculated. By comparing the mean of games won it can be seen, that the count and gauge model is the most succesful algorithm in terms of most wins created yet due to the high standard deviation in games won also the most inconsistent. From the standard deviation of difference in games won it can be distinguished, that the $bacon model$ is the most balanced overall, leading to small improvements for all different oponent strategies. In comparison therto the threshold and count and gauge model are not succesful against every oponent, but if the are create a high yield. \\
+
+Lastly the time efficiencys have to be considered: Clearly the count and gauge algorithm is the one leading to a victory the quickest, as its low mean in hands played shows. On the other hand the $bacon model$ is the most time consuming. While being the most effective for every oponent its enormous mean amount of hands played leaves it to be essentially useless in practice.
+
+
 
 
 \subsection{Robustnes of the Results}
-When performing 1000 games 1000 times, we found a standard deviation 7.7 of the wins, Which means the resulting wins after 1000 games are precise on $\pm 7.7$.
+When performing 1000 games 1000 times, we found a standard deviation of 7.7 of the wins, Which means the resulting wins after 1000 games are precise on $\pm 7.7$.
 \subsection{Robustnes of the variables}
 
 
 
 
 \section{Summary and Outlook}
-HIER FELHT NOCH SUMMARY This project is developable in many kind of ways. We had thought of some different things we originally wanted to implement but we did not have the time to. \\
-One of them was implementing a blind that would increase over time. This is how it is played in real Texas Holdem with the motive to punish passive play. Because of that it would have been interesting to observe what difference it would have made in our simulation, also since our games lasted up to over a thousand hands and this is far away from reality. \\
+
+The most important understanding we gained from our simulation was definitely that there is a transition between when it is favourable to play aggressively and when to play rather passively. Under the simulated circumstances the transition happened exactly at a risk factor of 0.49. This can be translated into the applicable technique that if your opponent plays less than every second hand in average, you will on average win more if you play more aggressive than him. On the other side of this barrier, if the opponent plays less than every second hand with playing a little bit more conservative than him the long-term chances are the best. This rule can easily be implemented by just counting the number of times the opponent pays the blind when he is not forced to, divided by the amount of times it was the case.\\
+
+Our learning algorithm overall increased the performance, but all encountered big problems (? Lio, is it true) in the transfer region. This reflects the complexity of Poker even under simplified conditions and that there is no magical formula even when the opponent plays extremely balanced.\\
+
+Nevertheless we learned from our approach that by keeping track of the opponent’s decision, there can be a lot of insights gained about his strategy. After a few rounds played then the easy rule of “more or less than 50\% of the hands played” stated above can be applied to gain an advantage above. In case the outcome of this rule is close to 0.5, the result is to be tread with caution, as the stubborn execution can lead to the exact opposite results as proved by the count and gage algorithm.\\ \\
+
+This project is developable in many kind of ways. We had thought of some different things we originally wanted to implement but we did not have the time to. \\
+One of them was implementing a blind that would increase over time. This is how it is played in real Texas Holdem with the motive to punish passive play. Because of that it would have been interesting to observe what difference it would have made in our simulation, also since our games lasted up to over a thousand hands and this is far away from reality.\\
+
 One could also have tweaked the capital/blind ratio in general. Possible outcomes could have been that with a certain ratio the aggressive player gets punished because his loosing hands include bigger pots, but perhaps the conservative player looses more often because games are more fast paced.\\
+
 Another extremely interesting feature could have been giving the players the option to decide with how much money the wanted to raise the pot. Currently, one is the only option but how would the outcome of a game be if they could bet one, two or three. If that was the case, card evaluation needed to be different. A player now not only has to take his own cards in to the decision if he wants to play or drop out but also how much money his opponent has bet in this phase. Furthermore, would this change have opened the opportunity for a player to bluff his counterpart, this means pretending to have better cards then what he actually has. Now maybe the more active player gets more rewarded for his play style.\\
+
 The possibility of checking could also have been included. Checking is doing nothing when your opponent has not bet any money. This would open different strategies, because now it is possible that a hand plays out until the end with both players checking all the way to the showdown. This variation would need a distinct playing order and that would put the one, who has to show his cards first in a showdown, into a disadvantage. All these factors could play a role in developing a winning algorithms.\\
+
 Other variations that certainly would lead to different discoveries but would made the program much more complex are coding ''real'' cards with their actual probabilities to show up in a hand but also including more than two players which might would change the power dynamics between active and passive players.
 
 

@@ -2,47 +2,42 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1}Abstract}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Individual contributions}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Introduction and Motivations}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Description of the Model}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Generic Model}{6}}
-\@writefile{toc}{\contentsline {paragraph}{Card replacement}{6}}
-\@writefile{toc}{\contentsline {paragraph}{Card value adjustment}{6}}
-\@writefile{toc}{\contentsline {paragraph}{Risk factor}{6}}
-\@writefile{toc}{\contentsline {paragraph}{Blind}{6}}
-\@writefile{toc}{\contentsline {paragraph}{Betting}{6}}
-\@writefile{toc}{\contentsline {paragraph}{Showdown}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Learning models}{7}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Threshold model}{7}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Bacon model}{7}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Count and gauge model}{8}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Implementation}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Organisation of files}{10}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}adjustCardValue.m}{10}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Old and new card values with a sigma 0.2}}{11}}
-\newlabel{my-label}{{1}{11}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Highest and lowest possible card values with a sigma 0.4}}{11}}
-\newlabel{my-label}{{2}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}headsup.m}{12}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}game.m}{12}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.4}main.m}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Games won by player1 out of 1000}}{13}}
-\newlabel{Topview of all Data}{{1}{13}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Simulation Results and Discussion}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Results of generic model}{13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Results with blinds}{13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}Results with blinds | Interpretation}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Results of learning algorithms}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}Bacon model}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The figure above shows the progression of the capital of the player using the learning algorithm starting at 1000 chips. The figure below shows the progression of the corresponding riskfactor of the same player starting at $r(0)=0.1$ against a player with a riskfactor of $r=0.7$.}}{15}}
-\newlabel{Abbildung}{{2}{15}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2}Count and Gauge model}{16}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.3}Threshold model}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Robustnes of the Results}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Robustnes of the variables}{16}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Model and implementation}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}main.m}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}game.m}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}headsup.m}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}adujstCardValue.m}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Learning models}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1}Threshold model}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2}Bacon model}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3}Count and gauge model}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Robustness of results and model}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Games won by player1 out of 1000}}{10}}
+\newlabel{Topview of all Data}{{1}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Simulation Results and Discussion}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Results of generic model}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Results with blinds}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}Results with blinds | Interpretation}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Results of learning algorithms}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}$Bacon model$}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Resulting win matrices for all three learning models. From left to right: threshold, count and gauge, $bacon$}}{12}}
+\newlabel{LearningModelsAllDataOverview}{{2}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The figure above shows the progression of the capital of the player using the learning algorithm starting at 1000 chips. The figure below shows the progression of the corresponding riskfactor of the same player starting at $r(0)=0.1$ against a player with a riskfactor of $r=0.7$.}}{13}}
+\newlabel{Abbildung}{{3}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2}Count and Gauge model}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.3}Threshold model}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Topview of difference from results of threshold learning model and generic model with blinds}}{14}}
+\newlabel{allDataWins_Threshold_Difference}{{4}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Learning models overview figures}}{15}}
+\newlabel{Learning models overview}{{1}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Comparison of learning algorithm performances}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Robustnes of the Results}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Robustnes of the variables}{16}}
 \@writefile{toc}{\contentsline {section}{\numberline {7}Summary and Outlook}{16}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}References}{17}}
-\@writefile{toc}{\contentsline {section}{\numberline {9}Appendix}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Source Code}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Variable documentation}{17}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.1}Variables from generic model}{17}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.2}Variables from learning models}{18}}
-\@writefile{toc}{\contentsline {paragraph}{Threshold model}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}References}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Appendix}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Source Code}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Variable documentation}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.1}Variables from generic model}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.2}Variables from learning models}{19}}
+\@writefile{toc}{\contentsline {paragraph}{Threshold model}{19}}
