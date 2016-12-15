@@ -255,17 +255,6 @@ The second part consists of finding the optimal counterpart to the estimated ris
 
  
 
-\section{Robustness of results and influence of sigma}
-
-To draw some conclusions from our model we had to ensure that our model is robust enough. We performed thousand games a thousand times and found a standard deviation of 7.7 for the wins.\\
-
-To the function adjustCardValue.m a sigma for the flop is needed that leads to a big variety of outcomes because three new cards are dealt in that round. Still the difference in the card value before and after new cards cannot be too wide, otherwise all correlation is lost. In the next two rounds, the turn and the river, where only one card is dealt the current card value has to be somewhat stable.\\
-
-We chose the combination of 0.4/0.2/0.2 to be the one that represents a game of Texas Hold'em the best. \\
-
-We ran some simulations with different sigmas and saw that for each combination the resulting graph has the same shape but is shifted to the left or the right of the x and y scale.
-
-Sigma have been tested on their reach from 0 to 1 and lowest/highest possible value for each risk factor. The results can be found on GitHub\footnote{https://github.com/atlas000/project-poker-msssm}.
 
 
 
@@ -496,26 +485,33 @@ Sigma have been tested on their reach from 0 to 1 and lowest/highest possible va
 \end{center}
 \end{figure}
 
-\subsubsection{Results with blinds}
-The figure \ref{Topview of all Data} shows how many games player1 has won out of a total of 1000, when both players started out with an equal amount of chips (50) and a fixed blind equal to the betValue of 1. The colour of every cell ($x=r1|y=r2$) shows the number of games won by Player1 with his risk factor $r1$ against player2 with a risk factor $r2$.\\
-%so etzte 
-On the diagonal ($r1=r2$) a green line can be seen, which shows that player1 and player2 have each won half of all games played. Around this line the games won by a player are antisymmetrically distributed, which means that both players did equally well when using the same risk factor (strategy) $r$.\\
+\subsubsection{Generic model -- Results }
+Figure \ref{Topview of all Data} shows how many games player1 has won out of a total of 1000, when both players started out with an equal amount of chips (50) and a fixed blind equal to the betValue of 1. The colour of every cell ($x=r, y=r2$) shows the number of games won by player1 with his risk factor $r1$ against player2 with a risk factor $r2$.\\
+% 
+
+On the diagonal ($r1=r2$) a green line can be seen, which shows that player1 and player2 have each won approximately half of all games played. Around this line the games won by a player are antisymmetrically distributed, which means that both players did equally well when using the same risk factor (strategy) $r$.\\
+
 %
 A very passive strategy ($r > 0.63$) could not win any games, except against a more passive player. In this case, the less passive strategy occurred to be superior.\\
 %
+
 An aggressive strategy ($r < 0.5$) performed better. It could win against the very passive strategy (r opponent $> 0.63$). However, it clearly lost against all less aggressive strategies under 0.63 ($r < r$ opponent $< 0.63$).\\
+
 Thus, there are two different patterns visible in Figure \ref{Topview of all Data}. One pattern ($r <0.63$), where the more passive player wins. And a second pattern ($r>0.5$), where the more active player wins.\\
+
 Between these two patterns lies a transition area, where both risk factors are between 0.5 and 0.63. In this area the games were very balanced and not even an optimal counter-strategy did win more than 60\% of all games.\\
-An optimal risk factor against most other strategies was found to be around $r = 0.5$. 
 
- \subsubsection{Results with blinds | Interpretation}
+In the transistion area the change from where it is favorable to play passiv on to playing active occurs.
 
-The bad performance of the very passive strategy can be explained with two independent mechanisms. One being the blind, that punishes the more passive player. The other being the card score dropping below the risk factor before the showdown, leading to a loss of all the chips bet during that hand.
-The aggressive player plays more games with weak hands, which means, that he will lose more often in the case of a showdown. 
+ \subsubsection{Generic model -- Interpretation}
+
+The bad performance of the very passive strategy can be explained with two independent mechanisms. One being the blind that punishes the more passive player. The other being the card score dropping below the risk factor before the showdown, leading to a loss of all chips bet during that hand.\\
+
+The aggressive player plays more games with weak hands, which means that he will lose more often in the case of a showdown.
 Inside the area, where the game is balanced, all mentioned effects compensate each other.
-The model weights the effect of a passive player dropping out after already having invested chips to heavy. In a real game of poker a player stays in the game, due to a comparison between his own odds and the pot. This effect is called pot odds.\\
-Otherwise the simulation shows that the aggressive strategy (loose play) is favorable against an extreme passive strategy (tight play). This reflects the reality where blinds give the passive player a disadvantage in the heads up.\\
-%%%%%%%%%%%
+The model weights the effect of a passive player dropping out after already having invested chips to heavily. In a real game of poker a player stays in the game, due to a comparison between his own odds and the pot. This effect is called pot odds.\\
+
+Otherwise the simulation shows that the aggressive strategy (loose play) is favorable against an extreme passive strategy (tight play). This reflects the reality where blinds give the passive player a disadvantage in a heads up.\\
 
 \subsection{Results of learning algorithms}
 
@@ -527,28 +523,25 @@ Otherwise the simulation shows that the aggressive strategy (loose play) is favo
 \label{LearningModelsAllDataOverview}
 \end{figure}
 
-\subsubsection{iteration}
+\subsubsection{Iteration model}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.6]{Graphics/Janfigure.pdf}
-\caption{The figure above shows the progression of the capital of the player using the learning algorithm starting at 1000 chips. The figure below shows the progression of the corresponding riskfactor of the same player starting at $r(0)=0.1$ against a player with a riskfactor of $r=0.7$.\label{Abbildung}}
-\end{figure}
-
-As seen in figure \ref{Abbildung} the algorithm needs around 800 hands in order to leed to a good estimation for the optimal parameter r. This leads to good results for startcapitals above 70 and to very good results at startcapitals above 300 even with a very unfavorable starting strategy like r(0)=0.1.
+The algorithm needs around 800 hands in order to leed to a good estimation for the optimal parameter r. This leads to good results for start capitals above 70 and to very good results at start capitals above 300 even with a very unfavorable starting strategy like r(0)=0.1.
 \\
+
 \begin{tabular}{ p{7.2cm}  p{7.2cm}}
 Advantages & Disadvantages\\
-The model has a great potential for different kinds of optimization:
+The model has a great potential for different kinds of optimisation:
 \begin{itemize}
-\item parameters used in the model can still be optimized in order to perform quicker
-\item more cases for different scenarios could be made (different action for loss of 1 and loss of two)
-\item the cards that the player has could be taken into account in order to avoid a change in policy if there has just been bad luck with the cards 
+\item parameters used in the model can still be optimised in order to perform quicker
+\item more cases for different scenarios could be made (different action for loss of one and loss of two)
+\item the cards that the player could have been taken into account in order to avoid a change in policy if there has just been bad luck with the cards 
 \end{itemize}
- & The algorithm is based on a simplified scenario, where the only reason for a loss is besed on the strategy and never on luck. This leads in some cases to a change of policy even when this is not desired. This can be observed in the high standart deviation, even after haveing fond a well estimated r. This behavior leeds to the algorithm loosing against extreemly strong strategies due to its continous slight deviations from the optimum  riskvalue.\\ 
+& The algorithm is based on a simplified scenario, where the only reason for a loss is based on the strategy and never on luck. This leads in some cases to a change of policy even when this is not desired. This can be observed in the high standard deviation, even after having found a well estimated r. This behavior leeds to the algorithm loosing against extremely strong strategies due to its continous slight deviations from the optimum risk factor.\\ 
 \end{tabular}
 
 \subsubsection{Count and Gauge model}
+The Algorithm overall lead to a significant increase in the number of games won. Unfortunately in the region between 0.5 and 0.7 he was rather contra productive than helpful. This shows that there is a solid base but clear need to act differently in this domain. 
+We relate this event to the transition from the “passive area” to the “active area”. The impact of luck for the cards can easy shift the estimation of one’s opponent risk factor into the wrong area which ultimately ends by choosing the wrong counterstrategy.
 
 \begin{minipage}[t]{0.48\textwidth}
 \textbf{Advantages}\\
@@ -596,7 +589,7 @@ What stays to explain are the not expected blue areas. In the blue area at a ris
 \multicolumn{1}{c|}{}                       & \multicolumn{1}{c|}{$\mu$} & \multicolumn{1}{c|}{$\sigma$} & \multicolumn{1}{c|}{$\mu$} & \multicolumn{1}{c|}{$\sigma$} & \multicolumn{1}{c|}{$\mu$} & $\sigma$ \\ \hline
 \multicolumn{1}{l|}{Threshold model}       & 605.7777                   & \multicolumn{1}{c|}{301.3260} & 1565                       & \multicolumn{1}{c|}{1854}     & 105.9853                   & 501.7773 \\ \hline
 \multicolumn{1}{l|}{Count and gauge model} & 690.6369                   & \multicolumn{1}{c|}{343.1811} & 709.3543                   & \multicolumn{1}{c|}{342.5163} & 190.8446                   & 477.6301 \\ \hline
-\multicolumn{1}{l|}{iteration model}           & 647.55                     & \multicolumn{1}{c|}{335.5068}         & 110020                     & \multicolumn{1}{c|}{748600}   & 147.7569                            & 198.3177        \\ \hline
+\multicolumn{1}{l|}{Iteration model}           & 647.55                     & \multicolumn{1}{c|}{335.5068}         & 110020                     & \multicolumn{1}{c|}{748600}   & 147.7569                            & 198.3177        \\ \hline
 
 \end{tabular}
 \end{table}
@@ -607,12 +600,17 @@ In table \ref{Learning models overview} some characteristic values for the learn
 Lastly the time efficiencys have to be considered: Clearly the count and gauge algorithm is the one leading to a victory the quickest, as its low mean in hands played shows. On the other hand the iteration is the most time consuming. While being the most effective for every oponent its enormous mean amount of hands played leaves it to be essentially useless in practice.
 
 
+\section{Robustness of results and influence of sigma}
 
+To draw some conclusions from our model we had to ensure that our model is robust enough. We performed thousand games a thousand times and found a standard deviation of 7.7 for the wins.\\
 
-\subsection{Robustnes of the Results}
-When performing 1000 games 1000 times, we found a standard deviation of 7.7 of the wins, Which means the resulting wins after 1000 games are precise on $\pm 7.7$.
-\subsection{Robustnes of the variables}
+To the function adjustCardValue.m a sigma for the flop is needed that leads to a big variety of outcomes because three new cards are dealt in that round. Still the difference in the card value before and after new cards cannot be too wide, otherwise all correlation is lost. In the next two rounds, the turn and the river, where only one card is dealt the current card value has to be somewhat stable.\\
 
+We chose the combination of 0.4/0.2/0.2 to be the one that represents a game of Texas Hold'em the best. \\
+
+We ran some simulations with different sigmas and saw that for each combination the resulting graph has the same shape but is shifted to the left or the right of the x and y scale.
+
+Sigma have been tested on their reach from 0 to 1 and lowest/highest possible value for each risk factor. The results can be found on GitHub\footnote{https://github.com/atlas000/project-poker-msssm}.
 
 
 

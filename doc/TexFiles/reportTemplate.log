@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.6.9)  15 DEC 2016 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.6.9)  15 DEC 2016 16:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -479,7 +479,7 @@ df ETHlogo.eps>
 (epstopdf)             \includegraphics on input line 5.
 Package epstopdf Info: Output file is already uptodate.
 
-<ETHlogo-eps-converted-to.pdf, id=128, 179.67125pt x 45.16875pt>
+<ETHlogo-eps-converted-to.pdf, id=120, 179.67125pt x 45.16875pt>
 File: ETHlogo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ETHlogo-eps-converted-to.pdf>
@@ -711,124 +711,159 @@ Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
  [8]
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
-
- []
-
-
-<Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg, id=212, 2431.0825p
+<Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg, id=201, 2431.0825p
 t x 1274.7625pt>
 File: Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg Graphic file (
 type jpg)
 
 <use Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg>
 Package pdftex.def Info: Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat
-.jpg used on input line 494.
+.jpg used on input line 483.
 (pdftex.def)             Requested size: 486.20789pt x 254.94798pt.
 
-Overfull \hbox (56.20326pt too wide) in paragraph at lines 494--495
+Overfull \hbox (56.20326pt too wide) in paragraph at lines 483--484
  [] 
  []
 
-[9] [10 <./Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 513--519
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--491
 
  []
 
-<Graphics/LearningAllThreeWins.jpg, id=225, 2156.055pt x 1078.0275pt>
+[9 <./Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 495--497
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--501
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 510--515
+
+ []
+
+[10] <Graphics/LearningAllThreeWins.jpg, id=213, 2156.055pt x 1078.0275pt>
 File: Graphics/LearningAllThreeWins.jpg Graphic file (type jpg)
 
 <use Graphics/LearningAllThreeWins.jpg>
 Package pdftex.def Info: Graphics/LearningAllThreeWins.jpg used on input line 5
-24.
+20.
 (pdftex.def)             Requested size: 431.20337pt x 215.60167pt.
 
-Overfull \hbox (1.19875pt too wide) in paragraph at lines 524--525
+Overfull \hbox (1.19875pt too wide) in paragraph at lines 520--521
  [] 
  []
 
-<Graphics/Janfigure.pdf, id=226, 627.94597pt x 413.545pt>
+<Graphics/Janfigure.pdf, id=214, 627.94597pt x 413.545pt>
 File: Graphics/Janfigure.pdf Graphic file (type pdf)
 
 <use Graphics/Janfigure.pdf>
-Package pdftex.def Info: Graphics/Janfigure.pdf used on input line 534.
+Package pdftex.def Info: Graphics/Janfigure.pdf used on input line 530.
 (pdftex.def)             Requested size: 376.7705pt x 248.1289pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (3.71486pt too wide) in paragraph at lines 538--550
+Overfull \hbox (3.71486pt too wide) in paragraph at lines 534--546
 [] 
  []
 
-[11] [12 <./Graphics/LearningAllThreeWins.jpg>]
+[11 <./Graphics/LearningAllThreeWins.jpg>]
 Overfull \vbox (0.75217pt too high) has occurred while \output is active []
 
 
-[13 <./Graphics/Janfigure.pdf>]
-Underfull \hbox (badness 4634) in paragraph at lines 562--565
+[12 <./Graphics/Janfigure.pdf>]
+Underfull \hbox (badness 4634) in paragraph at lines 558--561
 \OT1/cmr/m/n/12 edge of all pos-si-ble out-comes and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 562--565
+Underfull \hbox (badness 10000) in paragraph at lines 558--561
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
+Underfull \hbox (badness 10000) in paragraph at lines 565--566
 
  []
 
-<Graphics/allDataWins_Threshold_Difference.jpg, id=268, 987.69pt x 931.48pt>
+<Graphics/allDataWins_Threshold_Difference.jpg, id=251, 987.69pt x 931.48pt>
 File: Graphics/allDataWins_Threshold_Difference.jpg Graphic file (type jpg)
 
 <use Graphics/allDataWins_Threshold_Difference.jpg>
 Package pdftex.def Info: Graphics/allDataWins_Threshold_Difference.jpg used on 
-input line 573.
+input line 569.
 (pdftex.def)             Requested size: 296.30928pt x 279.44615pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 579--580
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
 
  []
 
-[14] [15 <./Graphics/allDataWins_Threshold_Difference.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 581--582
+[13] [14 <./Graphics/allDataWins_Threshold_Difference.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 589.
+               Default added (so using `tbp') on input line 585.
 
 
-Overfull \hbox (16.56245pt too wide) in paragraph at lines 593--602
+Overfull \hbox (16.56245pt too wide) in paragraph at lines 589--598
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 605--606
+Underfull \hbox (badness 10000) in paragraph at lines 601--602
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 608--609
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 610--611
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 612--613
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 622--623
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 621--622
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 623--624
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
 
  []
 
@@ -842,173 +877,181 @@ Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 628--630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 631--632
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--634
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 627--629
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 630--631
+Underfull \hbox (badness 10000) in paragraph at lines 652--653
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--633
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 634--635
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 651--652
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 665--666
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 667--668
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 669--670
+Underfull \hbox (badness 10000) in paragraph at lines 672--673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 671--672
+Underfull \hbox (badness 10000) in paragraph at lines 674--675
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 673--674
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--676
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 682--683
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 686--687
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 690--691
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 677--678
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 679--680
+Underfull \hbox (badness 10000) in paragraph at lines 699--700
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 681--682
+Underfull \hbox (badness 10000) in paragraph at lines 701--702
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--684
+Underfull \hbox (badness 10000) in paragraph at lines 703--704
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 685--686
+Underfull \hbox (badness 10000) in paragraph at lines 705--706
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 687--688
+Underfull \hbox (badness 10000) in paragraph at lines 707--708
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 689--690
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--692
+Underfull \hbox (badness 10000) in paragraph at lines 711--712
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 698--699
+Underfull \hbox (badness 10000) in paragraph at lines 713--714
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 700--701
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 702--703
+Underfull \hbox (badness 10000) in paragraph at lines 715--716
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 704--705
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 706--707
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 708--709
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 710--711
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 712--713
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 714--715
-
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 723.
-[21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 723.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 724.
+ [21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 724.
  (./reportTemplate.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 723.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 723.
-Package rerunfilecheck Info: File `reportTemplate.out' has not changed.
-(rerunfilecheck)             Checksum: 4F5DB53E10151E0E5BD6A8FBDE0DC348;2157.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 723.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 724.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 724.
+
+
+Package rerunfilecheck Warning: File `reportTemplate.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `reportTemplate.out':
+(rerunfilecheck)             Before: 82AF8C7F5DD29EEE87E990FE79B2700B;2015
+(rerunfilecheck)             After:  21D6EB13715533820B8BBAF9B6331B99;2012.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 724.
  ) 
 Here is how much of TeX's memory you used:
- 7137 strings out of 493014
- 103534 string characters out of 6133352
- 201846 words of memory out of 5000000
- 10492 multiletter control sequences out of 15000+600000
+ 7133 strings out of 493014
+ 103474 string characters out of 6133352
+ 200845 words of memory out of 5000000
+ 10490 multiletter control sequences out of 15000+600000
  15211 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,28p,966b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,31p,966b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -1020,10 +1063,10 @@ cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local
 /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on reportTemplate.pdf (21 pages, 3077715 bytes).
+Output written on reportTemplate.pdf (21 pages, 3076877 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 317 compressed objects within 4 object streams
- 68 named destinations out of 1000 (max. 500000)
- 274 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 356 PDF objects out of 1000 (max. 8388607)
+ 306 compressed objects within 4 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 258 words of extra memory for PDF output out of 10000 (max. 10000000)
 
