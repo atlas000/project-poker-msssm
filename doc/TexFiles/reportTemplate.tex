@@ -13,6 +13,7 @@
 \usepackage{color}           
 \usepackage{hyphenat}
 \usepackage{booktabs}
+\usepackage{hyperref}
 
 
 
@@ -149,20 +150,14 @@ The game can be played with a varying number of people and for simplicity be sub
 \\
 Every player has his own strategy, where some players like to play more conservative by not betting often and waiting for better cards and others play more aggressive by betting more often and trying to bluff his opponent. An important aspect of the game is the “blinds”, since they force the players to bet a fixed amount before the first cards are dealt. The blinds move forward by one player after every round. They guarantee that no player only can wait for the perfect cards and that there are always chips in the pot that can be won.
 \\							
-In our group we all are regular Texas Hold’em players. Therefore we all have lived through the following situation dozens of times: After every game played, a discussion is held about certain hands which should or shouldn’t be played and about the best approach on how to decide in this situations. We all agree that Texas Hold’em is about knowing your opponent and play “smarter” or “better” than him. Therefore it is not possible to have a fixed strategy. One has to be able to adjust his strategy depending on the way the opponent is playing and vice-versa.
-\\
-CHAME USENÄH FINDE I
-After a lost game the temptation to say that it is all about the luck of certain player is great. But since there are only few professionals making a decent living of Texas Hold’em than people trying, it clearly shows that luck is not the most important factor. There are Players who can adjust their strategy way better than others.\\ 
-Therefore we all often wondered what would be good strategies to best adjust to one’s opponent and in particularly how effective such strategies are. To make a valuable assumption about the effectiveness of such a strategy, one would need to play an enormous amount of games to formulate a statistically speaking valid statement. If a whole game or at least some parts of it can be simulated repeatedly under different circumstances and with varying strategies, then one could gain deeper insights into Texas Hold’em and possibly develop an applicable strategy or at least compare different approaches.
+We all agree that Texas Hold’em is about knowing your opponent and play “smarter” or “better” than him. Therefore it is not possible to have a fixed strategy. One has to be able to adjust his strategy depending on the way the opponent is playing and vice-versa.\\
+ 
+Hence we all often wondered what would be good strategies to best adjust to one’s opponent and in particularly how effective such strategies are. To make a valuable assumption about the effectiveness of such a strategy, one would need to play an enormous amount of games to formulate a statistically speaking valid statement. If a whole game or at least some parts of it can be simulated repeatedly under different circumstances and with varying strategies, then one could gain deeper insights into Texas Hold’em and possibly develop an applicable strategy or at least compare different approaches.
 
 
 \section{Model and implementation}
 
- 
-
-This section serves to understand how we through our code implemented the simulation. Expressions are introduced that we use throughout the report. One can find the whole program on git in the folder code.
-
- 
+This section serves to understand how we implemented the simulation. Expressions are introduced that we use throughout the report. One can find the whole program on GitHub \footnote{https://github.com/atlas000/project-poker-msssm} in the folder code. 
 
 \subsection{main.m}
 
@@ -188,13 +183,13 @@ In our model only a single fixed blind has been implemented, since in a heads up
 
 \subsection{headsup.m}
 
-The headsup.m function simulates one hand of poker which consists of up to four rounds. With every new card unveiled each player faces the decision whether to place a bet or not. Their action is determined by comparing their risk factors to their score. In total this scenario occurs up to four times per hand. If both players want to play until the end, a showdown determines the winner. Meaning that they have to show their cards and the one with the better score wins the hand and receives the pot\\
+The headsup.m function simulates one hand which consists of up to four rounds. With every new card unveiled each player faces the decision whether to place a bet or not. Their action is determined by comparing their risk factors to their score. In total this scenario occurs up to four times per hand. If both players want to play until the end, a showdown determines the winner. Meaning that they have to show their cards and the one with the better score wins the hand and receives the pot.\\
 
-In the first round the 'preflop' one player has to pay the blind and each player gets a set of playing card.\\
+In the first round, the "preflop", one player has to pay the blind and each player gets a set of playing card.\\
 
 The main aspect making poker a complicated game to simulate is its use of cards. Hence our main goal was to find a model, which did not require the implementation of a deck of cards. In order to achieve a similar effect every player is given a random number, called "card value". The number reaches from 0 to 1 and represents the quality of the hand, whereas 0 would be the worst hand and 1 the best.\\
 
-In the next three rounds the 'flop', 'turn' and 'river' new cards get unveiled on the table. So the score of the players' hands has to be adjusted.
+In the next three rounds the "flop", "turn" and "river" new cards get unveiled on the table. So the score of the players' hands has to be adjusted.
 
  
 
@@ -202,94 +197,75 @@ In the next three rounds the 'flop', 'turn' and 'river' new cards get unveiled o
 
 At the heart of this simulation lies the adjustCardValue function, which recalculates the card value of a player.\\
 
-Important criteria are that the cards correlate with each other, so if a player has good cards it is likely that his hand is still good when a new round is played. But also should it be possible for a value to reach the whole spectrum of card quality from 0 to 1. This is important because if one has a bad starting hand it should still be possible, with some luck, to get the best hand possible after the flop. Hence every value should be possible to receive but not with the same probability.\\
+Important criteria are that the cards correlate with each other, so if a player has good cards it is likely that his hand is still good when a new round is played. Also it should be possible for a value to reach the whole spectrum of card quality from 0 to 1. This is important because if one has a bad starting hand it should still be possible, with some luck, to get the best hand possible after the flop. Hence every value should be possible to receive but not with the same probability.\\
 
 
 \subsection{Learning models}
 An important part of real Texas Hold’em is to obtain an advantage by estimating the strategy of your opponent and to react accordingly.
-However in this model two different approaches for learning algorithms have been chosen to optimize a players strategy:
+In this model two different approaches for learning algorithms have been chosen to optimise a player's strategy, under the assumption that the oponent keeps his risk factor constant.
 \begin{itemize}
-\item One approach was to adapt the strategy in order to minimize the losses and thus maximize the profit of a player. This model analyses a players own performance. (model Tim \& Jan)% and therefore only depends on his strategy 
-\item  The other approach was to first analyse the play of the opponent and then choose the optimal strategy to best counter the other player, this of course is only possible if all outcomes for all strategies are known to the player which was the case in this model (model Patrice \& Lionel)\\
+\item One approach is minimise the losses and thus maximise the profit of a player. This model analyses a player's own performance.
+% and therefore only depends on his strategy 
+\item  The other approach was to first analyse the play of the opponent and then choose the optimal strategy to best counter the other player. This of course is only possible if all outcomes for all strategies are known.\\
 \end{itemize}
-Furthermore we took the assumption, that the opponent plays strictly regular and thus no ability to learn.
 
-\subsubsection{Threshold model}
+\subsubsection{Iteration model}
+This learning algorithm analyses the loss of the last hand, because if the last hand has been won there is no need to adapt the strategy. So after every hand one of the following scenarios takes place:\\
 
-The target of this learning model is to determine the riskfactor from player 2, which then enables to find the optimal riskfactor for player 1 for which his winning probability is increased.
-Everytime a showdown is conducted player 1 gets to know the cardvalue from player 2. Because player 2 has continued the headsup with this cardvalue until the showdown it is known, that the riskfactor from player 2 has to be lower than said cardvalue. With every showdon executed the possible values for riskfactor from player 2 can be narrowed down, leaving a threshold which has to be undershot by player 2's riskfactor.
-
-
-The optimal riskfactor from player 1 can then be determined with the "50 Games" Matrix. This matrix includes the winprobality for player 1 for all possible combinations of riskfactors between both players. Determining the optimal riskfactor for player 1 is then only a matter of finding the maximum in a certain area of the matrix.
-
-
-
-
-\subsubsection{Bacon model}
-This learning algoritm analyzes the loss of the last hand, because if the last hand has been won there is no need to adapt the strategy. So after every hand one of the following scenarios take place\\
 \renewcommand{\arraystretch}{1.4}
-\begin{tabular}{ p{6.45cm}   p{5.1cm}  p{2.4cm}}
+\begin{tabular}{ p{6.45cm}  p{5.1cm}  p{2.4cm}}
 %\hline
 Validation & Interpretation & Action\\
 %\end{tabular}
 \addlinespace
 %\begin{tabular}{ p{6.2cm}  | p{5.1cm} | p{2.7cm}}
-%\hline
+\hline
+\hline
+
 CapitalP-($t+1$) $>=$ Capital($t$) &	The player had equal or better cards, or the hand has not been played&
-r will not be changed \\
+riskfactor r will not be changed \\
 %\hline
 \addlinespace
 CapitalP-$(t+1) ==$ Calpital$(t)-4$	&	The player has lost after the showdown and is thus to agressive & \ r=r+0.012\\
 %\hline
 \addlinespace
-Else (CapitalP- dropped by 1,2 or 3) &	The player is to passive, since it did not come to a showdown & \ R2=R2+0.003\\
+Else (CapitalP- dropped by 1,2 or 3) &	The player is to passive, since it did not come to a showdown & \ r=r+0.003\\
 %\hline
-
-
 \end{tabular}
+
+
+\subsubsection{Threshold model}
+
+The target of this learning model is to determine the risk factor from the oponent, which then enables to find the optimal risk factor for the learning player.
+Everytime a showdown is conducted the learning player gets to know the score from his oponent . Because the oponent has continued the hand with this score until the showdown, it is known, that the risk factor from the oponent has to be lower than said score. With every showdown executed the possible values for risk factor of the oponent can be narrowed down, leaving a threshold which has to be undershot by the oponent's risk factor.
+
+
+The optimal risk factor for the learning player can then be determined with the data obtained by previous simulations. This data includes the win probality of both players for all possible combinations of riskfactors between both players. Determining the optimal risk factor then only is a matter of finding the maximum for a given oponent strategy.
 
 \subsubsection{Count and gauge model}
 
-The main goal behind analysing the opponent’s way of playing is to correctly estimate his risk factor, in order to adapt one’s risk factor afterward. 
-Our algorithm accomplishes this in 2 consecutive steps:
+The main goal behind analysing the opponent’s way of playing is to correctly estimate his risk factor, in order to adapt one’s risk factor afterwards. 
+This algorithm is accomplished in two consecutive steps:
  
-(Only necessary in case it is not mentioned In the introduction The opponent plays strictly regular, and every card value is equally alike.) Hence the algorithm keeps track of the number of times the opponent decides to play the first round when he is not forced to do so by the blind, called “nroundsplayed”. The ratio between this value and the total amount of rounds played called “nrounds” can then be used as a measurement to estimate the opponent’s risk factor, called “RF” as followed:
- 
-Formula RF= 1 –(nrounds/nroundsplayed)
- 
-The second part consist of finding the optimal counterpart to the risk factor estimated in above. For that reason we evaluated results obtained by simulating almost all possible combination of strategies. The data obtained indicates, that for every risk factor chosen, there is at least one optimal counterpart. After extracting these values, the algorithm can adjust the own risk factor referring to these values.
- 
-Advantages:
-·         With an increasing number of rounds, the estimation continuously gets better
-·          On a long run he will always play the most suitable strategy and optimize his return.
-·         It reaches a good estimation of the opponents risk factor already after a few rounds
-·         The algorythm could also use the rounds where the other player has to pay the blind by counting the number of consecutive rounds he plays and applying the same strategy just by including the models standartdeviation into the calculus. This would lead to a faster estimation of the opponents risk factor.
- 
-Disadvantages:
-·         The algorithm requires a precise knowledge of all possible outcomes and therefore is only applicable in the same circumstances the data was obtained.
-We had to take in account an estimation error as long as the number of hands played is low.
+Firstly it keeps track of the number of times the opponent decides to play the initial round when he is not forced to do so by the blind. The ratio between this value and the total amount of rounds played can then be used as a measurement to estimate the opponent’s risk factor:
+ $$
+\textnormal{risk factor} \approx 1 - \dfrac{\textnormal{\# rounds}}{\textnormal{\# rounds played}}
+ $$
+The second part consists of finding the optimal counterpart to the estimated risk factor. For that reason we evaluated results obtained by previous simulations. The data obtained indicates that for every risk factor chosen, there is at least one optimal counterpart. After extracting these values the algorithm adjusts the own risk factor.
 
  
 
- 
+\section{Robustness of results and influence of sigma}
 
-\section{Robustness of results and model}
+To draw some conclusions from our model we had to ensure that our model is robust enough. We performed thousand games a thousand times and found a standard deviation of 7.7 for the wins.\\
 
- 
+To the function adjustCardValue.m a sigma for the flop is needed that leads to a big variety of outcomes because three new cards are dealt in that round. Still the difference in the card value before and after new cards cannot be too wide, otherwise all correlation is lost. In the next two rounds, the turn and the river, where only one card is dealt the current card value has to be somewhat stable.\\
 
-To ensure that our model is robust enough to draw some conclusion from we performed thousand games a thousand times and found a standard deviation of 7.7 for the wins. This means the resulting wins after thousand games are precise on $\pm$7:7.\newline
+We chose the combination of 0.4/0.2/0.2 to be the one that represents a game of Texas Hold'em the best. \\
 
- 
+We ran some simulations with different sigmas and saw that for each combination the resulting graph has the same shape but is shifted to the left or the right of the x and y scale.
 
-The reason behind the sigma we chose for the flop as 0.4 is, because there three new cards are dealt and a big variety of outcomes is needed. But the difference in the card value before and after new cards cannot be to wide, otherwise all correlation is lost.\\
-
-In the next two rounds where only one card is dealt the current card value has to be stable. We found 0.2 to be best choice because 0.1 is too stable, so there would almost not be any difference in the card value.\\
-
- 
-
-We have tried a some different of sigma and came to the conclusion that this combination the resulting graph would be the same in its form just shifted more to the left or the right of the x and y scale. We chose the combination of 0.4/0.2/0.2 to be the one that represents a game of Texas Hold'em the best. \\
-
-Sigma have been tested on their reach from 0 to 1 and lowest/highest possible value for each risk factors. The results are found on git.....
+Sigma have been tested on their reach from 0 to 1 and lowest/highest possible value for each risk factor. The results can be found on GitHub\footnote{https://github.com/atlas000/project-poker-msssm}.
 
 
 
@@ -337,7 +313,7 @@ Sigma have been tested on their reach from 0 to 1 and lowest/highest possible va
 %
 %
 %
-%\subsubsection{Bacon model}
+%\subsubsection{iteration model}
 %This learning algoritm analyzes the loss of the last hand, because if the last hand has been won there is no need to adapt the strategy. So after every hand one of the following scenarios take place\\
 %\renewcommand{\arraystretch}{1.4}
 %\begin{tabular}{ p{6.45cm}   p{5.1cm}  p{2.4cm}}
@@ -377,11 +353,11 @@ Sigma have been tested on their reach from 0 to 1 and lowest/highest possible va
 %·         It reaches a good estimation of the opponents risk factor already after a few rounds
 %·         The algorythm could also use the rounds where the other player has to pay the blind by counting the number of consecutive rounds he plays and applying the same strategy just by including the models standartdeviation into the calculus. This would lead to a faster estimation of the opponents risk factor.
 % 
-%Disadvantages:
+%Disadvantag es:
 %·         The algorithm requires a precise knowledge of all possible outcomes and therefore is only applicable in the same circumstances the data was obtained.
 %We had to take in account an estimation error as long as the number of hands played is low.
 %
-%
+%l
 %
 %
 %
@@ -547,11 +523,11 @@ Otherwise the simulation shows that the aggressive strategy (loose play) is favo
 \begin{center}
 \includegraphics[scale=.2]{Graphics/LearningAllThreeWins}
 \end{center}
-\caption{Resulting win matrices for all three learning models. From left to right: threshold, count and gauge, $bacon$}
+\caption{Resulting win matrices for all three learning models. From left to right: threshold, count and gauge, iteration}
 \label{LearningModelsAllDataOverview}
 \end{figure}
 
-\subsubsection{$Bacon model$}
+\subsubsection{iteration}
 
 \begin{figure}[h!]
 \centering
@@ -573,6 +549,20 @@ The model has a great potential for different kinds of optimization:
 \end{tabular}
 
 \subsubsection{Count and Gauge model}
+
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Advantages}\\
+%\addlinespace
+With an increasing number of rounds the estimation continuously gets better\\
+On a long run he will always play the most suitable strategy and optimize his return\\
+It reaches a good estimation of the opponent's risk factor already after a few rounds\\
+The algorithm could also use the rounds where the other player has to pay the blind by counting the number of consecutive rounds he plays and applies the same strategy just by including the models standard deviation into the calculation. This would lead to a faster estimation of the opponent's risk factor
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Disadvantages}\\
+%\addlinespace
+The algorithm requires a precise knowledge of all possible outcomes and therefore is only applicable in the same circumstances the data was obtained\\
+\end{minipage}
 
 \subsubsection{Threshold model}
 
@@ -606,15 +596,15 @@ What stays to explain are the not expected blue areas. In the blue area at a ris
 \multicolumn{1}{c|}{}                       & \multicolumn{1}{c|}{$\mu$} & \multicolumn{1}{c|}{$\sigma$} & \multicolumn{1}{c|}{$\mu$} & \multicolumn{1}{c|}{$\sigma$} & \multicolumn{1}{c|}{$\mu$} & $\sigma$ \\ \hline
 \multicolumn{1}{l|}{Threshold model}       & 605.7777                   & \multicolumn{1}{c|}{301.3260} & 1565                       & \multicolumn{1}{c|}{1854}     & 105.9853                   & 501.7773 \\ \hline
 \multicolumn{1}{l|}{Count and gauge model} & 690.6369                   & \multicolumn{1}{c|}{343.1811} & 709.3543                   & \multicolumn{1}{c|}{342.5163} & 190.8446                   & 477.6301 \\ \hline
-\multicolumn{1}{l|}{Bacon model}           & 647.55                     & \multicolumn{1}{c|}{335.5068}         & 110020                     & \multicolumn{1}{c|}{748600}   & 147.7569                            & 198.3177        \\ \hline
+\multicolumn{1}{l|}{iteration model}           & 647.55                     & \multicolumn{1}{c|}{335.5068}         & 110020                     & \multicolumn{1}{c|}{748600}   & 147.7569                            & 198.3177        \\ \hline
 
 \end{tabular}
 \end{table}
 
 
-In table \ref{Learning models overview} some characteristic values for the learning algorithms are displayed. Therefore the mean and standard deviation of the resulting wins matrix, total hands played matrix and the difference in the wins matrix with and without the learning algorithm have been calculated. By comparing the mean of games won it can be seen, that the count and gauge model is the most succesful algorithm in terms of most wins created yet due to the high standard deviation in games won also the most inconsistent. From the standard deviation of difference in games won it can be distinguished, that the $bacon model$ is the most balanced overall, leading to small improvements for all different oponent strategies. In comparison therto the threshold and count and gauge model are not succesful against every oponent, but if the are create a high yield. \\
+In table \ref{Learning models overview} some characteristic values for the learning algorithms are displayed. Therefore the mean and standard deviation of the resulting wins matrix, total hands played matrix and the difference in the wins matrix with and without the learning algorithm have been calculated. By comparing the mean of games won it can be seen, that the count and gauge model is the most succesful algorithm in terms of most wins created yet due to the high standard deviation in games won also the most inconsistent. From the standard deviation of difference in games won it can be distinguished, that the iteration is the most balanced overall, leading to small improvements for all different oponent strategies. In comparison therto the threshold and count and gauge model are not succesful against every oponent, but if the are create a high yield. \\
 
-Lastly the time efficiencys have to be considered: Clearly the count and gauge algorithm is the one leading to a victory the quickest, as its low mean in hands played shows. On the other hand the $bacon model$ is the most time consuming. While being the most effective for every oponent its enormous mean amount of hands played leaves it to be essentially useless in practice.
+Lastly the time efficiencys have to be considered: Clearly the count and gauge algorithm is the one leading to a victory the quickest, as its low mean in hands played shows. On the other hand the iteration is the most time consuming. While being the most effective for every oponent its enormous mean amount of hands played leaves it to be essentially useless in practice.
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.6.9)  15 DEC 2016 14:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.6.9)  15 DEC 2016 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -286,21 +286,120 @@ Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
 \langwohyphens=\language83
 LaTeX Info: Redefining \_ on input line 43.
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2016/05/05 v6.83n Hypertext links for LaTeX
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package hobsub Info: Skipping package `kvdefinekeys' (already loaded).
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen144
+\Hy@linkcounter=\count117
+\Hy@pagecounter=\count118
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2016/05/05 v6.83n Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count119
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4446.
+Package hyperref Info: Link nesting OFF on input line 4451.
+Package hyperref Info: Hyper index ON on input line 4454.
+Package hyperref Info: Plain pages OFF on input line 4461.
+Package hyperref Info: Backreferencing OFF on input line 4466.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4691.
+\c@Hy@tempcnt=\count120
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5044.
+\XeTeXLinkMargin=\dimen145
+\Fld@menulength=\count121
+\Field@Width=\dimen146
+\Fld@charsize=\dimen147
+Package hyperref Info: Hyper figures OFF on input line 6298.
+Package hyperref Info: Link nesting OFF on input line 6303.
+Package hyperref Info: Hyper index ON on input line 6306.
+Package hyperref Info: backreferencing OFF on input line 6313.
+Package hyperref Info: Link coloring OFF on input line 6318.
+Package hyperref Info: Link coloring with OCG OFF on input line 6323.
+Package hyperref Info: PDF/A mode OFF on input line 6328.
+LaTeX Info: Redefining \ref on input line 6368.
+LaTeX Info: Redefining \pageref on input line 6372.
+\Hy@abspage=\count122
+\c@Item=\count123
+\c@Hfootnote=\count124
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2016/05/05 v6.83n Hyperref driver for pdfTeX
+\Fld@listcount=\count125
+\c@bookmark@seq@number=\count126
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip50
+)
 (./reportTemplate.aux)
 \openout1 = `reportTemplate.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -338,18 +437,37 @@ LaTeX Font Info:    ... okay on input line 26.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen144
+\scratchcounter=\count127
+\scratchdimen=\dimen148
 \scratchbox=\box54
-\nofMPsegments=\count118
-\nofMParguments=\count119
+\nofMPsegments=\count128
+\nofMParguments=\count129
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen145
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
+\MPscratchCnt=\count130
+\MPscratchDim=\dimen149
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
 \everyMPtoPDFconversion=\toks23
-) (./cover.tex
+)
+\AtBeginShipoutBox=\box55
+Package hyperref Info: Link coloring OFF on input line 27.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count133
+)
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
+LaTeX Info: Redefining \nameref on input line 27.
+
+(./reportTemplate.out) (./reportTemplate.out)
+\@outlinefile=\write3
+\openout3 = `reportTemplate.out'.
+
+ (./cover.tex
 Package epstopdf Info: Source file: <ETHlogo.eps>
 (epstopdf)                    date: 2016-12-11 18:39:03
 (epstopdf)                    size: 179075 bytes
@@ -360,7 +478,8 @@ Package epstopdf Info: Source file: <ETHlogo.eps>
 df ETHlogo.eps>
 (epstopdf)             \includegraphics on input line 5.
 Package epstopdf Info: Output file is already uptodate.
- <ETHlogo-eps-converted-to.pdf, id=1, 179.67125pt x 45.16875pt>
+
+<ETHlogo-eps-converted-to.pdf, id=128, 179.67125pt x 45.16875pt>
 File: ETHlogo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ETHlogo-eps-converted-to.pdf>
@@ -379,30 +498,30 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./ETHlo
 go-eps-converted-to.pdf>]
-Overfull \hbox (76.82234pt too wide) in paragraph at lines 57--62
+Overfull \hbox (76.82234pt too wide) in paragraph at lines 58--63
 []$[]$ 
  []
 
 
-Overfull \hbox (76.82234pt too wide) in paragraph at lines 64--69
+Overfull \hbox (76.82234pt too wide) in paragraph at lines 65--70
 []$[]$ 
  []
 
 
-Overfull \hbox (76.82234pt too wide) in paragraph at lines 70--75
+Overfull \hbox (76.82234pt too wide) in paragraph at lines 71--76
 []$[]$ 
  []
 
 
-Overfull \hbox (76.82234pt too wide) in paragraph at lines 76--81
+Overfull \hbox (76.82234pt too wide) in paragraph at lines 77--82
 []$[]$ 
  []
 
 [2] (./reportTemplate.toc)
-\tf@toc=\write3
-\openout3 = `reportTemplate.toc'.
+\tf@toc=\write4
+\openout4 = `reportTemplate.toc'.
 
- [3] [4]
+ [3]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
@@ -474,12 +593,6 @@ Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
 Missing character: There is no ú in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
@@ -490,250 +603,232 @@ Missing character: There is no ú in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no Ñ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--154
+
+ []
+
+[4]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
- [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--204
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 212.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 207.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 212.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 207.
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
-[8]
-Underfull \hbox (badness 1199) in paragraph at lines 242--242
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
+[]\OT1/cmr/m/n/12 riskfactor r
+ []
+
+
+Underfull \hbox (badness 3758) in paragraph at lines 226--228
+\OT1/cmr/m/n/12 will not be
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 229--229
 \OT1/cmr/m/n/12 show-down and is thus to
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 245--245
+Underfull \hbox (badness 1803) in paragraph at lines 232--232
 []\OT1/cmr/m/n/12 The player is to pas-sive,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--247
-[]
+Overfull \hbox (2.91122pt too wide) in paragraph at lines 216--235
+[][] 
  []
 
-
-Overfull \hbox (5.79892pt too wide) in paragraph at lines 245--247
-\OT1/cmr/m/n/12 R2=R2+0.003| 
- []
-
-
-Overfull \hbox (2.91122pt too wide) in paragraph at lines 229--250
-[] 
- []
-
+[7]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
-[9]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no ¬ in font cmr12!
-Missing character: There is no ∑ in font cmr12!
-Missing character: There is no ¬ in font cmr12!
-Missing character: There is no ∑ in font cmr12!
-Missing character: There is no ¬ in font cmr12!
-Missing character: There is no ∑ in font cmr12!
-Missing character: There is no ¬ in font cmr12!
-Missing character: There is no ∑ in font cmr12!
-Missing character: There is no ¬ in font cmr12!
-Missing character: There is no ∑ in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
+ [8]
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
 
  []
 
 
-<Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg, id=44, 2431.0825pt
- x 1274.7625pt>
+<Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg, id=212, 2431.0825p
+t x 1274.7625pt>
 File: Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg Graphic file (
 type jpg)
 
 <use Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg>
 Package pdftex.def Info: Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat
-.jpg used on input line 518.
+.jpg used on input line 494.
 (pdftex.def)             Requested size: 486.20789pt x 254.94798pt.
 
-Overfull \hbox (56.20326pt too wide) in paragraph at lines 518--519
+Overfull \hbox (56.20326pt too wide) in paragraph at lines 494--495
  [] 
  []
 
-[11 <./Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 537--543
+[9] [10 <./Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 513--519
 
  []
 
-<Graphics/LearningAllThreeWins.jpg, id=48, 2156.055pt x 1078.0275pt>
+<Graphics/LearningAllThreeWins.jpg, id=225, 2156.055pt x 1078.0275pt>
 File: Graphics/LearningAllThreeWins.jpg Graphic file (type jpg)
 
 <use Graphics/LearningAllThreeWins.jpg>
 Package pdftex.def Info: Graphics/LearningAllThreeWins.jpg used on input line 5
-48.
+24.
 (pdftex.def)             Requested size: 431.20337pt x 215.60167pt.
 
-Overfull \hbox (1.19875pt too wide) in paragraph at lines 548--549
+Overfull \hbox (1.19875pt too wide) in paragraph at lines 524--525
  [] 
  []
 
-<Graphics/Janfigure.pdf, id=49, 627.94597pt x 413.545pt>
+<Graphics/Janfigure.pdf, id=226, 627.94597pt x 413.545pt>
 File: Graphics/Janfigure.pdf Graphic file (type pdf)
 
 <use Graphics/Janfigure.pdf>
-Package pdftex.def Info: Graphics/Janfigure.pdf used on input line 558.
+Package pdftex.def Info: Graphics/Janfigure.pdf used on input line 534.
 (pdftex.def)             Requested size: 376.7705pt x 248.1289pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (3.71486pt too wide) in paragraph at lines 562--574
+Overfull \hbox (3.71486pt too wide) in paragraph at lines 538--550
 [] 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 579--580
+[11] [12 <./Graphics/LearningAllThreeWins.jpg>]
+Overfull \vbox (0.75217pt too high) has occurred while \output is active []
+
+
+[13 <./Graphics/Janfigure.pdf>]
+Underfull \hbox (badness 4634) in paragraph at lines 562--565
+\OT1/cmr/m/n/12 edge of all pos-si-ble out-comes and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 562--565
 
  []
 
-[13 <./Graphics/LearningAllThreeWins.jpg>]
-<Graphics/allDataWins_Threshold_Difference.jpg, id=58, 987.69pt x 931.48pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--570
+
+ []
+
+<Graphics/allDataWins_Threshold_Difference.jpg, id=268, 987.69pt x 931.48pt>
 File: Graphics/allDataWins_Threshold_Difference.jpg Graphic file (type jpg)
 
 <use Graphics/allDataWins_Threshold_Difference.jpg>
 Package pdftex.def Info: Graphics/allDataWins_Threshold_Difference.jpg used on 
-input line 583.
+input line 573.
 (pdftex.def)             Requested size: 296.30928pt x 279.44615pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 589--590
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
 
  []
 
-[14 <./Graphics/Janfigure.pdf>] [15 <./Graphics/allDataWins_Threshold_Differenc
-e.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 591--592
+[14] [15 <./Graphics/allDataWins_Threshold_Difference.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 581--582
 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 599.
+               Default added (so using `tbp') on input line 589.
 
 
-Overfull \hbox (16.56245pt too wide) in paragraph at lines 603--612
+Overfull \hbox (16.56245pt too wide) in paragraph at lines 593--602
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 615--616
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 631--632
+Underfull \hbox (badness 10000) in paragraph at lines 621--622
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 633--634
+Underfull \hbox (badness 10000) in paragraph at lines 623--624
 
  []
 
@@ -747,37 +842,62 @@ Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 637--639
+Underfull \hbox (badness 10000) in paragraph at lines 627--629
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--641
+Underfull \hbox (badness 10000) in paragraph at lines 630--631
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 642--643
+Underfull \hbox (badness 10000) in paragraph at lines 632--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 644--645
+Underfull \hbox (badness 10000) in paragraph at lines 634--635
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 651--652
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 661--662
+Underfull \hbox (badness 10000) in paragraph at lines 665--666
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 667--668
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 669--670
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--672
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 673--674
 
  []
 
@@ -786,7 +906,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 675--676
 
  []
 
-
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 677--678
 
  []
@@ -806,7 +926,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 683--684
 
  []
 
-[19]
+
 Underfull \hbox (badness 10000) in paragraph at lines 685--686
 
  []
@@ -827,27 +947,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 691--692
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 693--694
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 695--696
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 697--698
+Underfull \hbox (badness 10000) in paragraph at lines 702--703
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 704--705
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 699--700
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 701--702
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 
  []
 
@@ -856,7 +976,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 708--709
 
  []
 
-[20]
+
 Underfull \hbox (badness 10000) in paragraph at lines 710--711
 
  []
@@ -871,44 +991,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 714--715
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 716--717
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 718--719
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 720--721
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 722--723
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 724--725
-
- []
-
-[21] (./reportTemplate.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 723.
+[21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 723.
+ (./reportTemplate.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 723.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 723.
+Package rerunfilecheck Info: File `reportTemplate.out' has not changed.
+(rerunfilecheck)             Checksum: 4F5DB53E10151E0E5BD6A8FBDE0DC348;2157.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 723.
  ) 
 Here is how much of TeX's memory you used:
- 3518 strings out of 493014
- 48216 string characters out of 6133352
- 123188 words of memory out of 5000000
- 6983 multiletter control sequences out of 15000+600000
- 13666 words of font info for 53 fonts, out of 8000000 for 9000
+ 7137 strings out of 493014
+ 103534 string characters out of 6133352
+ 201846 words of memory out of 5000000
+ 10492 multiletter control sequences out of 15000+600000
+ 15211 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,26p,966b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,28p,966b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -916,11 +1016,14 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on reportTemplate.pdf (21 pages, 3051210 bytes).
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on reportTemplate.pdf (21 pages, 3077715 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 367 PDF objects out of 1000 (max. 8388607)
+ 317 compressed objects within 4 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 274 words of extra memory for PDF output out of 10000 (max. 10000000)
 
