@@ -514,13 +514,16 @@ Otherwise the simulation shows that the aggressive strategy (loose play) is favo
 
 \subsection{Results of learning algorithms}
 
-\begin{figure}
 \begin{center}
-\includegraphics[scale=.2]{Graphics/LearningAllThreeWins}
-\end{center}
+\begin{figure}
+
+\includegraphics[scale=.23]{Graphics/OvViewLatex18}
 \caption{Resulting win matrices for all three learning models. From left to right: threshold, count and gauge, iteration}
 \label{LearningModelsAllDataOverview}
+
 \end{figure}
+\end{center}
+
 
 \subsubsection{Iteration model}
 
@@ -581,20 +584,25 @@ What stays to explain are the not expected blue areas. In the blue area at a ris
 \begin{table}[]
 \centering
 \caption{Learning models overview figures}
+
+
 \label{Learning models overview}
 \begin{tabular}{lcccccc}
 \cline{2-7}
                                            & \multicolumn{2}{c}{\# Games won}                      & \multicolumn{2}{c}{\# Hands played}                   & \multicolumn{2}{c}{$\Delta$games won} \\ \cline{2-7} 
 \multicolumn{1}{c|}{}                       & \multicolumn{1}{c|}{$\mu$} & \multicolumn{1}{c|}{$\sigma$} & \multicolumn{1}{c|}{$\mu$} & \multicolumn{1}{c|}{$\sigma$} & \multicolumn{1}{c|}{$\mu$} & $\sigma$ \\ \hline
-\multicolumn{1}{l|}{Threshold model}       & 605.7777                   & \multicolumn{1}{c|}{301.3260} & 1565                       & \multicolumn{1}{c|}{1854}     & 105.9853                   & 501.7773 \\ \hline
-\multicolumn{1}{l|}{Count and gauge model} & 690.6369                   & \multicolumn{1}{c|}{343.1811} & 709.3543                   & \multicolumn{1}{c|}{342.5163} & 190.8446                   & 477.6301 \\ \hline
+
+
 \multicolumn{1}{l|}{Iteration model}           & 647.55                     & \multicolumn{1}{c|}{335.5068}         & 110020                     & \multicolumn{1}{c|}{748600}   & 147.7569                            & 198.3177        \\ \hline
+\multicolumn{1}{l|}{Count and gauge model} & 690.6369                   & \multicolumn{1}{c|}{343.1811} & 709.3543                   & \multicolumn{1}{c|}{342.5163} & 190.8446                   & 477.6301 \\ \hline
+\multicolumn{1}{l|}{Threshold model}       & 605.7777                   & \multicolumn{1}{c|}{301.3260} & 1565                       & \multicolumn{1}{c|}{1854}     & 105.9853                   & 501.7773 \\ \hline
+
 
 \end{tabular}
 \end{table}
 
 
-In table \ref{Learning models overview} some characteristic values for the learning algorithms are displayed. Therefore the mean and standard deviation of the resulting wins matrix, total hands played matrix and the difference in the wins matrix with and without the learning algorithm have been calculated. By comparing the mean of games won it can be seen, that the count and gauge model is the most succesful algorithm in terms of most wins created yet due to the high standard deviation in games won also the most inconsistent. From the standard deviation of difference in games won it can be distinguished, that the iteration is the most balanced overall, leading to small improvements for all different oponent strategies. In comparison therto the threshold and count and gauge model are not succesful against every oponent, but if the are create a high yield. \\
+In table \ref{Learning models overview} some characteristic values for the learning algorithms are displayed. Therefore the mean and standard deviation of the resulting wins matrix, total hands played matrix and the difference in the wins matrix with and without the learning algorithm have been calculated. By comparing the mean of games won it can be seen, that the count and gauge model is the most succesful algorithm in terms of most wins created yet due to the high standard deviation in games won, also the most inconsistent. From the standard deviation of difference in games won it can be distinguished, that the iteration is the most balanced overall, leading to small improvements for all different oponent strategies. In comparison therto the threshold and count and gauge model are not succesful against every oponent, but if the are create a high yield. \\
 
 Lastly the time efficiencys have to be considered: Clearly the count and gauge algorithm is the one leading to a victory the quickest, as its low mean in hands played shows. On the other hand the iteration is the most time consuming. While being the most effective for every oponent its enormous mean amount of hands played leaves it to be essentially useless in practice.
 
