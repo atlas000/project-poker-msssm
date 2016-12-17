@@ -145,7 +145,7 @@ if playerP1(4) == playerP2(4) %both players want to play until the end
         %Learning implementation: if cardvalueP2 lower is than est.
         %risk factor(=Threshold), est. risk factor of p2 is updated
         if playerP2(3)<playerP1(5) && pot == 8
-            playerP1(5)=playerP2(3)+0.15;
+            playerP1(5)=playerP2(3);
         end;
      
     %if player2's cards are better he wins and receives the pot    
@@ -155,7 +155,7 @@ if playerP1(4) == playerP2(4) %both players want to play until the end
         %Learning implementation: if cardvalueP2 is lower than est.
         %risk factor(=Threshold), est. risk factor of p2 is updated
         if playerP2(3)<playerP1(5) && pot == 8 %if cardvalueP2 lower than est. riskfactor(=Threshold)
-            playerP1(5)=playerP2(3)+0.15;
+            playerP1(5)=playerP2(3);
         end;
     
     %both players have the same cards. They get back their own money
@@ -166,7 +166,7 @@ if playerP1(4) == playerP2(4) %both players want to play until the end
         %Learning implementation: if cardvalueP2 is lower than est.
         %risk factor(=Threshold), est. risk factor of player2 is updated
         if playerP2(3)<playerP1(5) && pot == 8 %if cardvalueP2 lower than est. riskfactor(=Threshold)
-            playerP1(5)=playerP2(3)+0.15;
+            playerP1(5)=playerP2(3);
         end;
     end;
 end;
