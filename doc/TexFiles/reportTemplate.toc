@@ -14,7 +14,7 @@
 \contentsline {subsection}{\numberline {5.1}Results of generic model}{9}{subsection.5.1}
 \contentsline {subsubsection}{\numberline {5.1.1}Generic model -- Results }{9}{subsubsection.5.1.1}
 \contentsline {subsubsection}{\numberline {5.1.2}Generic model -- Interpretation}{10}{subsubsection.5.1.2}
-\contentsline {subsection}{\numberline {5.2}Results of learning algorithms}{11}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2}Results of learning algorithms}{10}{subsection.5.2}
 \contentsline {subsubsection}{\numberline {5.2.1}Iteration model}{11}{subsubsection.5.2.1}
 \contentsline {subsubsection}{\numberline {5.2.2}Count and Gauge model}{12}{subsubsection.5.2.2}
 \contentsline {subsubsection}{\numberline {5.2.3}Threshold model}{12}{subsubsection.5.2.3}

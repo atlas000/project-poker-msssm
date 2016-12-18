@@ -136,7 +136,7 @@ This indicates that with an adaptive strategy an important increase in the avera
 
 \section{Individual contributions}
 
-The commonly used models for Texas Hold'em are mostly based on stochastical probability, which makes the implementation of algorithms highly complicated. Thus we decided to write our own simulation in order to simplify the problem using as few variables as possible. All further results and conclusions are based on our program.
+The commonly used models for Texas Hold'em are mostly based on stochastic probability, which makes the implementation of algorithms highly complicated. Thus we decided to write our own simulation in order to simplify the problem using as few variables as possible. All further results and conclusions are based on our program.
 
 
 \section{Introduction and Motivations}
@@ -225,7 +225,7 @@ Capital($t+1$) $>=$ Capital($t$) &	The player had equal or better cards, or the 
 risk factor $r$ will not be changed \\
 %\hline
 \addlinespace
-Capital$(t+1) ==$ Calpital$(t)-4$	&	The player has lost after the showdown and is thus to agressive & \ r=r+0.012\\
+Capital$(t+1) ==$ Capital$(t)-4$	&	The player has lost after the showdown and is thus to aggressive & \ r=r+0.012\\
 %\hline
 \addlinespace
 Else (Capital dropped by 1,2 or 3) &	The player is to passive, since it did not come to a showdown & \ r=r+0.003\\
@@ -237,10 +237,10 @@ Else (Capital dropped by 1,2 or 3) &	The player is to passive, since it did not 
 
 \subsubsection{Count and gauge model}
 
-The main goal behind analysing the opponent’s way of playing is to correctly estimate his risk factor, in order to adapt one’s risk factor afterwards. 
+The main goal behind analysing the opponent's way of playing is to correctly estimate his risk factor, in order to adapt one's risk factor afterwards. 
 This algorithm is accomplished in two consecutive steps:
  
-Firstly it keeps track of the number of times the opponent decides to play the initial round when he is not forced to do so by the blind. The ratio between this value and the total amount of rounds played can then be used as a measurement to estimate the opponent’s risk factor:
+Firstly it keeps track of the number of times the opponent decides to play the initial round when he is not forced to do so by the blind. The ratio between this value and the total amount of rounds played can then be used as a measurement to estimate the opponent's risk factor:
  $$
 \textnormal{risk factor} \approx 1 - \dfrac{\textnormal{\# rounds}}{\textnormal{\# rounds played}}
  $$
@@ -251,10 +251,10 @@ The second part consists of finding the optimal counterpart to the estimated ris
 \subsubsection{Threshold model}
 
 The target of this learning model is to determine the risk factor from the opponent, which then enables to find the optimal risk factor for the learning player.
-Everytime a showdown is conducted the learning player gets to know the score from his opponent . Because the opponent has continued the hand with this score until the showdown, it is known, that the risk factor from the opponent has to be lower than said score. With every showdown executed the possible values for risk factor of the opponent can be narrowed down, leaving a threshold which has to be undershot by the opponent's risk factor.
+Every time a showdown is conducted the learning player gets to know the score from his opponent . Because the opponent has continued the hand with this score until the showdown, it is known, that the risk factor from the opponent has to be lower than said score. With every showdown executed the possible values for risk factor of the opponent can be narrowed down, leaving a threshold which has to be undershot by the opponent's risk factor.
 
 
-The optimal risk factor for the learning player can then be determined with the data obtained by previous simulations. This data includes the win probality of both players for all possible combinations of risk factors between both players. Determining the optimal risk factor then only is a matter of finding the maximum for a given opponent strategy.
+The optimal risk factor for the learning player can then be determined with the data obtained by previous simulations. This data includes the win probability of both players for all possible combinations of risk factors between both players. Determining the optimal risk factor then only is a matter of finding the maximum for a given opponent strategy.
 
 
 
@@ -488,7 +488,7 @@ The optimal risk factor for the learning player can then be determined with the 
 Figure \ref{Topview of all Data} shows how many games player1 has won out of a total of 1000, when both players started out with an equal amount of chips (50) and a fixed blind equal to the betValue of 1. The colour of every cell ($x=r, y=r2$) shows the number of games won by player1 with his risk factor $r1$ against player2 with a risk factor $r2$.\\
 % 
 
-On the diagonal ($r1=r2$) a green line can be seen, which shows that player1 and player2 have each won approximately half of all games played. Around this line the games won by a player are approximately antisymmetrically distributed, which means that both players did equally well when using the same risk factor.\\
+On the diagonal ($r1=r2$) a green line can be seen, which shows that player1 and player2 have each won approximately half of all games played. Around this line the games won by a player are approximately anti-symmetrically distributed, which means that both players did equally well when using the same risk factor.\\
 
 %
 A very passive strategy ($r > 0.63$) could not win any games, except against a more passive player. In this case, the less passive strategy occurred to be superior.\\
@@ -500,7 +500,7 @@ Thus, there are two different patterns visible in Figure \ref{Topview of all Dat
 
 Between these two patterns lies a transition area, where both risk factors are between 0.5 and 0.63. In this area the games were very balanced and not even an optimal counter-strategy did win more than 60\% of all games.\\
 
-In the transistion area the change from where it is favorable to play passiv on to playing active occurs.
+In the transition area the change from where it is favourable to play passive on to playing active occurs.
 
  \subsubsection{Generic model -- Interpretation}
 
@@ -509,7 +509,7 @@ The aggressive player plays more games with weak hands, which means that he will
 Inside the area, where the game is balanced, all mentioned effects compensate each other.\\
 
 The model weights the effect of a passive player dropping out after already having invested chips to heavily. In a real game of poker a player stays in the game, due to a comparison between his own odds and the pot. This effect is called pot odds.\\
-Otherwise the simulation shows that the aggressive strategy (loose play) is favorable against an extreme passive strategy (tight play). This reflects the reality where blinds give the passive player a disadvantage in a heads up.\\
+Otherwise the simulation shows that the aggressive strategy (loose play) is favourable against an extreme passive strategy (tight play). This reflects the reality where blinds give the passive player a disadvantage in a heads up.\\
 
 \subsection{Results of learning algorithms}
 
@@ -526,7 +526,7 @@ Otherwise the simulation shows that the aggressive strategy (loose play) is favo
 
 \subsubsection{Iteration model}
 
-The algorithm needs around 800 hands in order to leed to a good estimation for the optimal parameter r. This leads to good results for start capitals above 70 and to very good results at start capitals above 300 even with a very unfavorable starting strategy like r(0)=0.1.
+The algorithm needs around 800 hands in order to lead to a good estimation for the optimal parameter r. This leads to good results for start capitals above 70 and to very good results at start capitals above 300 even with a very unfavourable starting strategy like r(0)=0.1.
 \\
 
 \begin{tabular}{ p{7.2cm}  p{7.2cm}}
@@ -537,12 +537,12 @@ The model has a great potential for different kinds of optimisation:
 \item More cases for different scenarios could be made (different action for loss of one and loss of two)
 \item The cards that the player could have taken into account in order to avoid a change in policy if he only had bad luck
 \end{itemize}
-& The algorithm is based on a simplified scenario, where the only reason for a loss is based on the strategy and never on luck. This leads in some cases to a change of policy even when it is not desired. This can be observed in the high standard deviation, even after having found a well estimated $r$. This behavior leeds to the algorithm loosing against extremely strong strategies due to its continous slight deviations from the optimum risk factor.\\ 
+& The algorithm is based on a simplified scenario, where the only reason for a loss is based on the strategy and never on luck. This leads in some cases to a change of policy even when it is not desired. This can be observed in the high standard deviation, even after having found a well estimated $r$. This behaviour leads to the algorithm loosing against extremely strong strategies due to its continuous slight deviations from the optimum risk factor.\\ 
 \end{tabular}
 
 \subsubsection{Count and Gauge model}
 The algorithm leads to a significant increase in the number of games won. Unfortunately in the region between 0.5 and 0.7 it was rather contra productive. In this region an adjustment of the otherwise solid algorithm is needed.
-We relate this event to the transition from the “passive area” to the “active area”. The impact of luck can easily shift the estimation of ones opponent's risk factor into the wrong area which ultimately ends by choosing the wrong counterstrategy.\\
+We relate this event to the transition from the "passive area” to the “active area”. The impact of luck can easily shift the estimation of ones opponent's risk factor into the wrong area which ultimately ends by choosing the wrong counter strategy.\\
 
 
 \begin{minipage}[t]{0.48\textwidth}
@@ -561,7 +561,7 @@ The algorithm requires a precise knowledge of all possible outcomes and therefor
 
 \subsubsection{Threshold model}
 
-Figure \ref{LearningModelsAllDataOverview} shows that the resulting wins are independent from the learning player's risk factor because results are nearly constant along a horizontal line. It is visible that the algorithm does not have the same effectiveness for all opponent-strategies. For an opponent risk factor $r \in [0,0.4]$  and also around 0.8 the algorithm is really succesfull, as can be seen with the highly yellow areas in the plot, which represent a lot of wins for the learning player. From the green band at an opponents risk factor of around 0.45 it can be seen that wins are equally balanced around this point. In the blue area for an opponents risk factor between 0.5 and 0.75 wins for the learning player are infrequent. This mean that there the algorithm fails to provide an advantage over the opponent.\\
+Figure \ref{LearningModelsAllDataOverview} shows that the resulting wins are independent from the learning player's risk factor because results are nearly constant along a horizontal line. It is visible that the algorithm does not have the same effectiveness for all opponent-strategies. For an opponent risk factor $r \in [0,0.4]$  and also around 0.8 the algorithm is really successful, as can be seen with the highly yellow areas in the plot, which represent a lot of wins for the learning player. From the green band at an opponents risk factor of around 0.45 it can be seen that wins are equally balanced around this point. In the blue area for an opponents risk factor between 0.5 and 0.75 wins for the learning player are infrequent. This mean that there the algorithm fails to provide an advantage over the opponent.\\
 
 \begin{figure}
 \begin{center}
@@ -571,11 +571,11 @@ Figure \ref{LearningModelsAllDataOverview} shows that the resulting wins are ind
 \label{allDataWins_Threshold_Difference}
 \end{figure}
 
-By subtracting the resultant matrix from generic model with blinds from that of the learning algorithm it can be visualized where the threshold learning algorithm improves the game results and where it fails to do so. This is shown in figure \ref{allDataWins_Threshold_Difference}. The highly yellow areas show a drastic improvement in performance, whereas the green areas represent scopes where the performance could only be slightly changed or even remained the same. The deep blue areas show scopes in which the learning players performance has declined drasticly.\\
+By subtracting the resultant matrix from generic model with blinds from that of the learning algorithm it can be visualized where the threshold learning algorithm improves the game results and where it fails to do so. This is shown in figure \ref{allDataWins_Threshold_Difference}. The highly yellow areas show a drastic improvement in performance, whereas the green areas represent scopes where the performance could only be slightly changed or even remained the same. The deep blue areas show scopes in which the learning players performance has declined drastically.\\
 
-The behaviour of the learning model in the green and yellow areas can be explained as follows: since the performance from the learning player in the green areas was already good, with the generic model no big improvement could be realised. The difference in wins therefore leveled off in these sections. The yellow areas underly low performance regions in the generic model with blinds, thus a big improvement can be realised and the difference in wins rocketed.\\
+The behaviour of the learning model in the green and yellow areas can be explained as follows: since the performance from the learning player in the green areas was already good, with the generic model no big improvement could be realised. The difference in wins therefore levelled off in these sections. The yellow areas underlay low performance regions in the generic model with blinds, thus a big improvement can be realised and the difference in wins rocketed.\\
 
-What remains to explain are the not expected blue areas. In the blue area at a risk factor of 0.9 the opponent plays extremely passive. Hence a showdown seldomly occurs and the learning algorithm cannot take effect. However this can only explain the failure of the learning aspect of the algorithm but not the loss of the learning player. The other blue area's behaviour can be explained by the addition of two effects. Firstly the gradient of the generic result matrix is extremly steep, thus already a slight misestimate in the opponent's risk factor can lead to a big change in the optimal risk factor for the learning player. Secondly because in the turn the opponent can also play a hand up to 0.15 lower than his risk factor the estimation for his risk factor can also be shifted downwards by up to 0.15 and therefore lead to a miscalculation in the optimal risk factor for the learning player.
+What remains to explain are the not expected blue areas. In the blue area at a risk factor of 0.9 the opponent plays extremely passive. Hence a showdown seldom occurs and the learning algorithm cannot take effect. However this can only explain the failure of the learning aspect of the algorithm but not the loss of the learning player. The other blue area's behaviour can be explained by the addition of two effects. Firstly the gradient of the generic result matrix is extremely steep, thus already a slight misestimate in the opponent's risk factor can lead to a big change in the optimal risk factor for the learning player. Secondly because in the turn the opponent can also play a hand up to 0.15 lower than his risk factor the estimation for his risk factor can also be shifted downwards by up to 0.15 and therefore lead to a miscalculation in the optimal risk factor for the learning player.
 
 
 \subsection{Comparison of learning algorithm performances}
@@ -615,7 +615,7 @@ To the function adjustCardValue.m a sigma for the flop is needed that leads to a
 
 We chose the combination of 0.4/0.2/0.2 to be the one that represents a game of Texas Hold'em the best. \\
 
-We ran some simulations with different sigmas and saw that for each combination the resulting graph has the same shape but is shifted to the left or the right of the x and y scale.
+We ran some simulations with different sigma and saw that for each combination the resulting graph has the same shape but is shifted to the left or the right of the x and y scale.
 
 Sigma have been tested on their reach from 0 to 1 and lowest/highest possible value for each risk factor. The results can be found on GitHub\footnote{https://github.com/atlas000/project-poker-msssm}.
 
@@ -627,11 +627,13 @@ The most important understanding we gained from our simulation was definitely th
 
 Our learning algorithm overall increased the performance, but all encountered big problems in the transition region. This reflects the complexity of poker even under simplified conditions and that there is no magical formula even when the opponent plays extremely balanced.\\
 
-Nevertheless we learned from our approach that by keeping track of the opponent's decisions, there can be a lot of insights gained about his strategy. After a few rounds played then the easy rule mentioned above can be applied to gain an advantage. In case the estimated risk factor of the opponent lies within the transition area, the result has to be treated with caution, as the stubborn execution can lead to the opposite the desired results as proved by the count and gauge algorithm.\\
+Nevertheless we learned from our approach that by keeping track of the opponent's decisions, there can be a lot of insights gained about his strategy. After a few rounds played then the easy rule mentioned above can be applied to gain an advantage. In the case that the estimated risk factor of the opponent lies within the transition area, the result has to be treated with caution, as the stubborn execution can lead to the opposite of the desired results as proved by the count and gauge algorithm. 
+Although the findings are plausible a further comparison with real game data is still needed to verify the results.
+
 
 \subsection{Outlook and Limitations}
 This project is developable in many kind of ways. We had thought of some different parameters one could implement. \\
-One of them was a blind that would increase over time. This is how it is played in real Texas Holdem with the motive to punish passive play. Because of that it would have been interesting to observe what difference it would have made in our simulation, also since our games lasted up to over a thousand hands and this is far away from reality.\\
+One of them was a blind that would increase over time. This is how it is played in real Texas Hold'em with the motive to punish passive play. Because of that it would have been interesting to observe what difference it would have made in our simulation, also since our games lasted up to over a thousand hands and this is far away from reality.\\
 
 One could also have tweaked the capital/betValue ratio in general. Possible outcomes could have been that with a certain ratio the aggressive player gets punished because his loosing hands include bigger pots or the conservative player looses more often because games are more fast paced.\\
 
@@ -639,7 +641,7 @@ Another extremely interesting feature could have been giving the players the opt
 
 The possibility of checking could also have been included. Checking is doing nothing when your opponent has not bet any chips. This variation would need a distinct playing order and that would put the  one, who has to show his cards first in a showdown, into a disadvantage. All these factors could play a role in developing a winning algorithm.\\
 
-Other variations that certainly would lead to different discoveries but would make the program much more complex are coding ''real'' cards with their actual probabilities to show up in a hand but also including more than two players which might would change the power dynamics between active and passive players.
+Other variations that certainly would lead to different discoveries but would make the program much more complex are coding ''real'' cards with their actual probabilities to show up in a hand but also including more than two players which might change the power dynamics between active and passive players.
 
 
 \section{References}
