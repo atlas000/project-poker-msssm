@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.6.9)  17 DEC 2016 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.6.9)  18 DEC 2016 11:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -479,7 +479,7 @@ df ETHlogo.eps>
 (epstopdf)             \includegraphics on input line 5.
 Package epstopdf Info: Output file is already uptodate.
 
-<ETHlogo-eps-converted-to.pdf, id=120, 179.67125pt x 45.16875pt>
+<ETHlogo-eps-converted-to.pdf, id=128, 179.67125pt x 45.16875pt>
 File: ETHlogo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ETHlogo-eps-converted-to.pdf>
@@ -522,6 +522,15 @@ Overfull \hbox (76.82234pt too wide) in paragraph at lines 77--82
 \openout4 = `reportTemplate.toc'.
 
  [3]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
@@ -676,11 +685,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--213
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
-[]\OT1/cmr/m/n/12 riskfactor r
- []
-
-
 Underfull \hbox (badness 3758) in paragraph at lines 225--227
 \OT1/cmr/m/n/12 will not be
  []
@@ -711,7 +715,7 @@ Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
  [8]
-<Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg, id=201, 2431.0825p
+<Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg, id=211, 2431.0825p
 t x 1274.7625pt>
 File: Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg Graphic file (
 type jpg)
@@ -730,12 +734,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 488--490
 
  []
 
-[9 <./Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 491--492
 
  []
 
-
+[9 <./Graphics/allDataPlot_BlindOn_1000Games_001Step_TopFlat.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 494--496
 
  []
@@ -756,37 +760,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 501--502
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 507--508
+Underfull \hbox (badness 10000) in paragraph at lines 507--510
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 509--512
+Underfull \hbox (badness 10000) in paragraph at lines 511--513
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 513--514
-
- []
-
-[10] <Graphics/OvViewLatex18.jpg, id=213, 1862.96pt x 544.0325pt>
+<Graphics/OvViewLatex18.jpg, id=219, 1845.89626pt x 537.00626pt>
 File: Graphics/OvViewLatex18.jpg Graphic file (type jpg)
 
 <use Graphics/OvViewLatex18.jpg>
-Package pdftex.def Info: Graphics/OvViewLatex18.jpg used on input line 520.
-(pdftex.def)             Requested size: 428.47179pt x 125.12483pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 530--532
+Package pdftex.def Info: Graphics/OvViewLatex18.jpg used on input line 519.
+(pdftex.def)             Requested size: 424.54721pt x 123.50883pt.
+ [10]
+Underfull \hbox (badness 10000) in paragraph at lines 529--531
 
  []
 
 
-Overfull \hbox (3.71486pt too wide) in paragraph at lines 533--543
+Overfull \hbox (3.71486pt too wide) in paragraph at lines 532--542
 [][] 
  []
 
-[11 <./Graphics/OvViewLatex18.jpg>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ú in font cmr12!
@@ -799,10 +797,12 @@ Missing character: There is no ú in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
 
+Underfull \hbox (badness 10000) in paragraph at lines 544--546
+
+ []
+
+[11 <./Graphics/OvViewLatex18.jpg>]
 Underfull \hbox (badness 4634) in paragraph at lines 557--560
 \OT1/cmr/m/n/12 edge of all pos-si-ble out-comes and
  []
@@ -812,29 +812,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 557--560
 
  []
 
-[12]
+
 Underfull \hbox (badness 10000) in paragraph at lines 564--565
 
  []
 
-<Graphics/allDataWins_Threshold_Difference.jpg, id=224, 987.69pt x 931.48pt>
-File: Graphics/allDataWins_Threshold_Difference.jpg Graphic file (type jpg)
 
+<Graphics/allDataWins_Threshold_Difference.jpg, id=230, 971.63pt x 814.04124pt>
+File: Graphics/allDataWins_Threshold_Difference.jpg Graphic file (type jpg)
 <use Graphics/allDataWins_Threshold_Difference.jpg>
 Package pdftex.def Info: Graphics/allDataWins_Threshold_Difference.jpg used on 
 input line 568.
-(pdftex.def)             Requested size: 296.30928pt x 279.44615pt.
+(pdftex.def)             Requested size: 291.49126pt x 244.21425pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 574--575
 
  []
 
-
+[12] [13 <./Graphics/allDataWins_Threshold_Difference.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
 
-[13] [14 <./Graphics/allDataWins_Threshold_Difference.jpg>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 584.
@@ -849,7 +848,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 605--606
 
  []
 
-[15]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 612--613
 
  []
@@ -864,193 +863,179 @@ Underfull \hbox (badness 10000) in paragraph at lines 616--617
 
  []
 
-
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 626--627
 
  []
 
-[16]
+
 Underfull \hbox (badness 10000) in paragraph at lines 628--629
 
  []
 
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 630--631
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 630--631
+Underfull \hbox (badness 10000) in paragraph at lines 633--635
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--634
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
+Underfull \hbox (badness 10000) in paragraph at lines 640--641
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 637--638
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 639--640
+Underfull \hbox (badness 10000) in paragraph at lines 671--672
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 656--657
+Underfull \hbox (badness 10000) in paragraph at lines 673--674
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--671
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 672--673
+Underfull \hbox (badness 10000) in paragraph at lines 677--678
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 679--680
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 681--682
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 683--684
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 685--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--688
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 689--690
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 674--675
+Underfull \hbox (badness 10000) in paragraph at lines 691--692
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 676--677
+Underfull \hbox (badness 10000) in paragraph at lines 693--694
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--679
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--681
+Underfull \hbox (badness 10000) in paragraph at lines 697--698
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--683
+Underfull \hbox (badness 10000) in paragraph at lines 704--705
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--685
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 686--687
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 688--689
+Underfull \hbox (badness 10000) in paragraph at lines 710--711
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--691
+Underfull \hbox (badness 10000) in paragraph at lines 712--713
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--693
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 694--695
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 696--697
+Underfull \hbox (badness 10000) in paragraph at lines 714--715
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 703--704
+Underfull \hbox (badness 10000) in paragraph at lines 716--717
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--706
+Underfull \hbox (badness 10000) in paragraph at lines 718--719
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 707--708
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 709--710
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 711--712
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 713--714
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 715--716
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 717--718
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 719--720
-
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 728.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 729.
 [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 728.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 729.
  (./reportTemplate.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 728.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 728.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 729.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 729.
 Package rerunfilecheck Info: File `reportTemplate.out' has not changed.
-(rerunfilecheck)             Checksum: 457C3DED1656C69858EFED3F202E6702;2018.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 728.
+(rerunfilecheck)             Checksum: 686791AED640758314F6ECA131FC7E29;2148.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 729.
  ) 
 Here is how much of TeX's memory you used:
- 7125 strings out of 493014
- 103293 string characters out of 6133352
+ 7129 strings out of 493014
+ 103353 string characters out of 6133352
  200543 words of memory out of 5000000
- 10485 multiletter control sequences out of 15000+600000
+ 10487 multiletter control sequences out of 15000+600000
  15211 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,31p,966b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,31p,1157b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -1062,10 +1047,10 @@ cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local
 /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on reportTemplate.pdf (20 pages, 1189987 bytes).
+Output written on reportTemplate.pdf (20 pages, 1187554 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 335 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 269 words of extra memory for PDF output out of 10000 (max. 10000000)
 
