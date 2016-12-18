@@ -2,30 +2,28 @@
 \BOOKMARK [1][-]{section.2}{Individual contributions}{}% 2
 \BOOKMARK [1][-]{section.3}{Introduction and Motivations}{}% 3
 \BOOKMARK [1][-]{section.4}{Model and implementation}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{main.m}{section.4}% 5
-\BOOKMARK [2][-]{subsection.4.2}{game.m}{section.4}% 6
-\BOOKMARK [2][-]{subsection.4.3}{headsup.m}{section.4}% 7
-\BOOKMARK [2][-]{subsection.4.4}{adujstCardValue.m}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.5}{Learning models}{section.4}% 9
-\BOOKMARK [3][-]{subsubsection.4.5.1}{Iteration model}{subsection.4.5}% 10
-\BOOKMARK [3][-]{subsubsection.4.5.2}{Count and gauge model}{subsection.4.5}% 11
-\BOOKMARK [3][-]{subsubsection.4.5.3}{Threshold model}{subsection.4.5}% 12
-\BOOKMARK [1][-]{section.5}{Simulation Results and Discussion}{}% 13
-\BOOKMARK [2][-]{subsection.5.1}{Results of generic model}{section.5}% 14
-\BOOKMARK [3][-]{subsubsection.5.1.1}{Generic model \205 Results }{subsection.5.1}% 15
-\BOOKMARK [3][-]{subsubsection.5.1.2}{Generic model \205 Interpretation}{subsection.5.1}% 16
-\BOOKMARK [2][-]{subsection.5.2}{Results of learning algorithms}{section.5}% 17
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Iteration model}{subsection.5.2}% 18
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Count and Gauge model}{subsection.5.2}% 19
-\BOOKMARK [3][-]{subsubsection.5.2.3}{Threshold model}{subsection.5.2}% 20
-\BOOKMARK [2][-]{subsection.5.3}{Comparison of learning algorithm performances}{section.5}% 21
-\BOOKMARK [1][-]{section.6}{Robustness of results and influence of sigma}{}% 22
-\BOOKMARK [1][-]{section.7}{Summary and Outlook}{}% 23
-\BOOKMARK [2][-]{subsection.7.1}{Summary}{section.7}% 24
-\BOOKMARK [2][-]{subsection.7.2}{Outlook and Limitations}{section.7}% 25
-\BOOKMARK [1][-]{section.8}{References}{}% 26
-\BOOKMARK [1][-]{section.9}{Appendix}{}% 27
-\BOOKMARK [2][-]{subsection.9.1}{Source Code}{section.9}% 28
-\BOOKMARK [2][-]{subsection.9.2}{Variable documentation}{section.9}% 29
-\BOOKMARK [3][-]{subsubsection.9.2.1}{Variables from generic model}{subsection.9.2}% 30
-\BOOKMARK [3][-]{subsubsection.9.2.2}{Variables from learning models}{subsection.9.2}% 31
+\BOOKMARK [2][-]{subsection.4.1}{Overview}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Scripts}{section.4}% 6
+\BOOKMARK [3][-]{subsubsection.4.2.1}{main.m}{subsection.4.2}% 7
+\BOOKMARK [3][-]{subsubsection.4.2.2}{game.m}{subsection.4.2}% 8
+\BOOKMARK [3][-]{subsubsection.4.2.3}{headsup.m}{subsection.4.2}% 9
+\BOOKMARK [3][-]{subsubsection.4.2.4}{adujstCardValue.m}{subsection.4.2}% 10
+\BOOKMARK [2][-]{subsection.4.3}{Learning models}{section.4}% 11
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Iteration model}{subsection.4.3}% 12
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Count and gauge model}{subsection.4.3}% 13
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Threshold model}{subsection.4.3}% 14
+\BOOKMARK [1][-]{section.5}{Simulation Results and Discussion}{}% 15
+\BOOKMARK [2][-]{subsection.5.1}{Results of generic model}{section.5}% 16
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Generic model \205 Results }{subsection.5.1}% 17
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Generic model \205 Interpretation}{subsection.5.1}% 18
+\BOOKMARK [2][-]{subsection.5.2}{Results of learning algorithms}{section.5}% 19
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Iteration model}{subsection.5.2}% 20
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Count and Gauge model}{subsection.5.2}% 21
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Threshold model}{subsection.5.2}% 22
+\BOOKMARK [2][-]{subsection.5.3}{Comparison of learning algorithm performances}{section.5}% 23
+\BOOKMARK [1][-]{section.6}{Robustness of results and influence of sigma}{}% 24
+\BOOKMARK [1][-]{section.7}{Summary and Outlook}{}% 25
+\BOOKMARK [2][-]{subsection.7.1}{Summary}{section.7}% 26
+\BOOKMARK [2][-]{subsection.7.2}{Outlook and Limitations}{section.7}% 27
+\BOOKMARK [1][-]{section.8}{References}{}% 28
+\BOOKMARK [1][-]{section.9}{Appendix}{}% 29
